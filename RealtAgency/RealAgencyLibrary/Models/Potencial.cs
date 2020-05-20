@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace RealtAgency.RealAgencyLibrary.Models
 {
+    [Serializable]
     public class Potencial
     {
-        public List<Buyer> Buyers { private set; get; }
+        public Portion Portion { private set; get; }
+        public Flat Flat { private set; get; }
 
     }
 }

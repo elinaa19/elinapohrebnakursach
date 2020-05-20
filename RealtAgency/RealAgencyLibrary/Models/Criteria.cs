@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace RealtAgency.RealAgencyLibrary.Models
 {
+    [Serializable]
     public class Criteria
     {
-        public ulong Price { get; set; }
-        public int Rooms { set; get; }
-        public int Condtion { set; get; }
-        public string Neghbourhood { set; get; }
+        public string Price { get; set; }
+        public string Rooms { set; get; }
+        public string Condition { set; get; }
+        public string Neighbourhood { set; get; }
        
 
 

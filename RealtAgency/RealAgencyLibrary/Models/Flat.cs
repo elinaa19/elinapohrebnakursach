@@ -8,9 +8,11 @@ using System.Threading.Tasks;
 
 namespace RealtAgency.Models
 {
+    [Serializable]
     // Квартира – это  наименование + изображение + адрес + район + количество комнат + состояние + стоимость + координаты продавца
     public class Flat
     {
+       
         public string Name { set; get; }
         public int Id { set; get; }
 
@@ -18,9 +20,9 @@ namespace RealtAgency.Models
         public string Adress { set; get; }
         public string Neighbourhood { set; get; }
 
-        public int Rooms { set; get; }
-        public int Condition { set; get; }
-        public int Price { set; get; }
+        public string Rooms { set; get; }
+        public string Condition { set; get; }
+        public string Price { set; get; }
 
  
         public string Coords { set; get; }

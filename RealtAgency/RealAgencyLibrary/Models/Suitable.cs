@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace RealtAgency.RealAgencyLibrary.Models
 {
-   public class Suitable
+    [Serializable]
+    public class Suitable
     {
         public List <Flat> Flats { private set; get; }
         public List <Buyer> Buyers { private set; get; }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace RealtAgency.RealAgencyLibrary.Models
 {
+    [Serializable]
     public class Sold
     {
         public Sold(List<Flat> flats, DateTime? t = null)

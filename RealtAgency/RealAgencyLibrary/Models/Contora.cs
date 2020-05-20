@@ -1,4 +1,4 @@
-﻿//using RealtAgency.RealAgencyLibrary.DAL;
+﻿using RealtAgency.RealAgencyLibrary;
 using RealtAgency.Data;
 using RealtAgency.RealAgencyLibrary.Models;
 using System;
@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RealtAgency.Data;
+using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 
 namespace RealtAgency.Models
 {
@@ -22,30 +24,33 @@ namespace RealtAgency.Models
         public List<Potencial> Potencials { private set; get; }
         public List<Sold> Solds { private set; get; }
         public List<Suitable> Suitables { private set; get; }
+        public List<Portion> Portions { private set; get; }
+        public List <Criteria> Criterias { private set; get; }
+
 
 
         public Contora()
         {
             Flats = new List<Flat>();
             Buyers = new List<Buyer>();
-            Potencials = new List<Potencial>();
-            Solds = new List<Sold>();
-            Suitables = new List<Suitable>();
+           // Potencials = new List<Potencial>();
+           // Solds = new List<Sold>();
+           // Suitables = new List<Suitable>();
+            Criterias = new List<Criteria>();
+            Portions = new List<Portion>();
         }
-
-        public void FillTestData(int n)
+      public void FillTestData(int n)
         {
             int a = 1;
             int b = 2;
             int f;
-            // Products
-            Flats.Clear();
-            for (int i = 0; i < n; i++)
+            int i = 1;
+            // Flats
+            List<Flat> Flats = new List<Flat>();
+            for ( i = 1; i < n; i++)
             {
                 if (i % 2 == 0) f = a;
                 else f = b;
-
-
                 for (int j = 10; j < n + 1000; j += 3)
                 {
                     Flats.Add(new Flat()
@@ -53,10 +58,11 @@ namespace RealtAgency.Models
                         Id = i,
                         Name = $"Flat{i}",
                         Adress = $"23 Serpnya st, {j}",
-                        Price = i * 10000,
-                        Rooms = f,
-                        Condition = 9,
-                        Coords = "380975667865"
+                        Price = (i * 1000).ToString(),
+                        Rooms = f.ToString(),
+                        Condition = 9.ToString(),
+                        Coords = "380975667865",
+                        Neighbourhood = "Shevchenko"
 
                     }); ;
                 }
@@ -64,11 +70,46 @@ namespace RealtAgency.Models
 
 
             // Buyers
-            Buyers.Clear();
-            for (int i = 1; i <= n; i++)
+            Buyers = new List<Buyer>();
+            
+
+            for ( i = 1; i <= n; i++)
             {
-                Buyers.Add(new Buyer { Name = $"Buyer{i}", Password = "123" });
+               Buyers.Add(new Buyer($"Buyer{i}", "123"));
+       
             }
+            //Criterias 
+            Criterias = new List<Criteria>();
+            for(i = 1; i<=n;i++)
+            {
+                if (i % 2 == 0) f = a;
+                else f = b;
+                Criterias.Add(new Criteria()
+                {
+                    Price = (i * 1000).ToString(),
+                    Rooms = f.ToString(),
+                    Condition = 9.ToString(),
+                    Neighbourhood = "Shevchenko"
+                }) ;
+            }
+            //Portions 
+
+            Portions = new List<Portion>();
+            for (i = 1; i <= n; i++)
+            {
+                Portions.Add(new Portion { Buyer = Buyers[(i)], Criteria = Criterias[(i)] });
+            }
+
+            // Potencials
+
+           // Potencials = new List<Potencial>();
+           
+            
+            
+           
+
+             
+
 
             /*         // Orders
                          Orders.Clear();
@@ -96,8 +137,8 @@ namespace RealtAgency.Models
             {
                 new Dao(this).Load();
             }
-
-        }
+    
+        } 
     } 
 
 

@@ -10,5 +10,11 @@ namespace RealtAgency.Models
     [Serializable]
     public class Realtor : User
     {
+        public Realtor(string name, string password)
+        {
+            Name = name;
+            Password = password;
+        }
     }
+
 }

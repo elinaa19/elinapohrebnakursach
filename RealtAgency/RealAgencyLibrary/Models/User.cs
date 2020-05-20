@@ -13,5 +13,8 @@ namespace RealtAgency.Models
 
         public string Name { set; get; }
         public string Password { set; get; }
-    }
+
+      
+
+}
 }
