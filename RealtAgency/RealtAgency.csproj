@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RealAgencyLibrary\Models\Portion.cs" />
     <Compile Include="RealtApp\AddFlat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,18 +79,6 @@
     <Compile Include="RealtApp\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="RealAgencyLibrary\DAI\Dao.cs" />
-    <Compile Include="RealAgencyLibrary\DAI\Dao1.cs" />
-    <Compile Include="RealAgencyLibrary\Models\Buyer.cs" />
-    <Compile Include="RealAgencyLibrary\Models\Contora.cs" />
-    <Compile Include="RealAgencyLibrary\Models\Criteria.cs" />
-    <Compile Include="RealAgencyLibrary\Models\Flat.cs" />
-    <Compile Include="RealAgencyLibrary\Models\LikedFlats.cs" />
-    <Compile Include="RealAgencyLibrary\Models\Potencial.cs" />
-    <Compile Include="RealAgencyLibrary\Models\Realtor.cs" />
-    <Compile Include="RealAgencyLibrary\Models\Sold.cs" />
-    <Compile Include="RealAgencyLibrary\Models\Suitable.cs" />
-    <Compile Include="RealAgencyLibrary\Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserApp\Register.cs">
@@ -175,6 +165,11 @@
   <ItemGroup>
     <None Include="Images\user.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\RealAgencyLibrary2\RealAgencyLibrary2.csproj">
+      <Project>{b7f8ddb4-9568-4aa1-b3ff-86c5512bdc63}</Project>
+      <Name>RealAgencyLibrary2</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

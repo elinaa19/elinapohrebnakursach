@@ -145,6 +145,9 @@
             this.RealPassword.TabIndex = 4;
             this.RealPassword.Text = "Password";
             this.RealPassword.UseSystemPasswordChar = true;
+            this.RealPassword.TextChanged += new System.EventHandler(this.RealPassword_TextChanged);
+            this.RealPassword.Enter += new System.EventHandler(this.RealPassword_Enter);
+            this.RealPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RealPassword_KeyPress);
             // 
             // pictureBox2
             // 
@@ -166,6 +169,8 @@
             this.RealName.Size = new System.Drawing.Size(213, 23);
             this.RealName.TabIndex = 2;
             this.RealName.Text = "Login";
+            this.RealName.TextChanged += new System.EventHandler(this.RealName_TextChanged);
+            this.RealName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RealName_KeyPress);
             // 
             // pictureBox1
             // 

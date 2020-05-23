@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RealtAgency.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace RealtAgency
 {
     public partial class ShowCustomers : Form
     {
+        internal Contora store;
         public ShowCustomers()
         {
+            store = new Contora();
             InitializeComponent();
         }
 
@@ -50,7 +53,7 @@ namespace RealtAgency
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Form Main = new Menu();
+            Form Main = new Menu(ref store);
             Main.Top = this.Top;
             Main.Left = this.Left;
             Main.Show();

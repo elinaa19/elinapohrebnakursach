@@ -34,36 +34,38 @@
             this.ShowCustomersButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ManePanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.agencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.flatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.flatGridView = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.neighbourhoodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.conditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.coordsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.agencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editFlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deliteFlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ManePanel.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flatGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contoraBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // AddNewFlatButton
@@ -148,6 +150,178 @@
             this.ManePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseDown);
             this.ManePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseMove);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 64);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(907, 390);
+            this.tabControl1.TabIndex = 12;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.flatGridView);
+            this.tabPage1.Controls.Add(this.menuStrip1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(899, 364);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // flatGridView
+            // 
+            this.flatGridView.AllowUserToAddRows = false;
+            this.flatGridView.AutoGenerateColumns = false;
+            this.flatGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.flatGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.adressDataGridViewTextBoxColumn,
+            this.neighbourhoodDataGridViewTextBoxColumn,
+            this.roomsDataGridViewTextBoxColumn,
+            this.conditionDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.imageDataGridViewImageColumn,
+            this.coordsDataGridViewTextBoxColumn});
+            this.flatGridView.DataSource = this.flatBindingSource;
+            this.flatGridView.Location = new System.Drawing.Point(3, 30);
+            this.flatGridView.Name = "flatGridView";
+            this.flatGridView.RowHeadersWidth = 51;
+            this.flatGridView.Size = new System.Drawing.Size(893, 334);
+            this.flatGridView.TabIndex = 1;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // adressDataGridViewTextBoxColumn
+            // 
+            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
+            this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
+            this.adressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
+            this.adressDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // neighbourhoodDataGridViewTextBoxColumn
+            // 
+            this.neighbourhoodDataGridViewTextBoxColumn.DataPropertyName = "Neighbourhood";
+            this.neighbourhoodDataGridViewTextBoxColumn.HeaderText = "Neighbourhood";
+            this.neighbourhoodDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.neighbourhoodDataGridViewTextBoxColumn.Name = "neighbourhoodDataGridViewTextBoxColumn";
+            this.neighbourhoodDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // roomsDataGridViewTextBoxColumn
+            // 
+            this.roomsDataGridViewTextBoxColumn.DataPropertyName = "Rooms";
+            this.roomsDataGridViewTextBoxColumn.HeaderText = "Rooms";
+            this.roomsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.roomsDataGridViewTextBoxColumn.Name = "roomsDataGridViewTextBoxColumn";
+            this.roomsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // conditionDataGridViewTextBoxColumn
+            // 
+            this.conditionDataGridViewTextBoxColumn.DataPropertyName = "Condition";
+            this.conditionDataGridViewTextBoxColumn.HeaderText = "Condition";
+            this.conditionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.conditionDataGridViewTextBoxColumn.Name = "conditionDataGridViewTextBoxColumn";
+            this.conditionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // imageDataGridViewImageColumn
+            // 
+            this.imageDataGridViewImageColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.imageDataGridViewImageColumn.DataPropertyName = "Image";
+            this.imageDataGridViewImageColumn.HeaderText = "Image";
+            this.imageDataGridViewImageColumn.MinimumWidth = 6;
+            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
+            this.imageDataGridViewImageColumn.Width = 42;
+            // 
+            // coordsDataGridViewTextBoxColumn
+            // 
+            this.coordsDataGridViewTextBoxColumn.DataPropertyName = "Coords";
+            this.coordsDataGridViewTextBoxColumn.HeaderText = "Coords";
+            this.coordsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.coordsDataGridViewTextBoxColumn.Name = "coordsDataGridViewTextBoxColumn";
+            this.coordsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // flatBindingSource
+            // 
+            this.flatBindingSource.DataSource = typeof(RealtAgency.Models.Flat);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agencyToolStripMenuItem,
+            this.programToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(893, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // agencyToolStripMenuItem
+            // 
+            this.agencyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editFlatToolStripMenuItem,
+            this.deliteFlatToolStripMenuItem});
+            this.agencyToolStripMenuItem.Name = "agencyToolStripMenuItem";
+            this.agencyToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.agencyToolStripMenuItem.Text = "Agency";
+            // 
+            // editFlatToolStripMenuItem
+            // 
+            this.editFlatToolStripMenuItem.Name = "editFlatToolStripMenuItem";
+            this.editFlatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editFlatToolStripMenuItem.Text = "Edit flat";
+            this.editFlatToolStripMenuItem.Click += new System.EventHandler(this.editFlatToolStripMenuItem_Click);
+            // 
+            // deliteFlatToolStripMenuItem
+            // 
+            this.deliteFlatToolStripMenuItem.Name = "deliteFlatToolStripMenuItem";
+            this.deliteFlatToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.deliteFlatToolStripMenuItem.Text = "Delite flat";
+            this.deliteFlatToolStripMenuItem.Click += new System.EventHandler(this.deliteFlatToolStripMenuItem_Click);
+            // 
+            // programToolStripMenuItem
+            // 
+            this.programToolStripMenuItem.Name = "programToolStripMenuItem";
+            this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.programToolStripMenuItem.Text = "Program";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(899, 364);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
@@ -169,88 +343,6 @@
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 1;
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 64);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(907, 390);
-            this.tabControl1.TabIndex = 12;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.menuStrip1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(899, 364);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(192, 74);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agencyToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.programToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(893, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // agencyToolStripMenuItem
-            // 
-            this.agencyToolStripMenuItem.Name = "agencyToolStripMenuItem";
-            this.agencyToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.agencyToolStripMenuItem.Text = "Agency";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // programToolStripMenuItem
-            // 
-            this.programToolStripMenuItem.Name = "programToolStripMenuItem";
-            this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.programToolStripMenuItem.Text = "Program";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.idDataGridViewTextBoxColumn,
-            this.adressDataGridViewTextBoxColumn,
-            this.neighbourhoodDataGridViewTextBoxColumn,
-            this.roomsDataGridViewTextBoxColumn,
-            this.conditionDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.coordsDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.flatBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(913, 364);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // userBindingSource
             // 
             this.userBindingSource.DataSource = typeof(RealtAgency.Models.User);
@@ -258,58 +350,6 @@
             // contoraBindingSource
             // 
             this.contoraBindingSource.DataSource = typeof(RealtAgency.Models.Contora);
-            // 
-            // flatBindingSource
-            // 
-            this.flatBindingSource.DataSource = typeof(RealtAgency.Models.Flat);
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // adressDataGridViewTextBoxColumn
-            // 
-            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
-            this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
-            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
-            // 
-            // neighbourhoodDataGridViewTextBoxColumn
-            // 
-            this.neighbourhoodDataGridViewTextBoxColumn.DataPropertyName = "Neighbourhood";
-            this.neighbourhoodDataGridViewTextBoxColumn.HeaderText = "Neighbourhood";
-            this.neighbourhoodDataGridViewTextBoxColumn.Name = "neighbourhoodDataGridViewTextBoxColumn";
-            // 
-            // roomsDataGridViewTextBoxColumn
-            // 
-            this.roomsDataGridViewTextBoxColumn.DataPropertyName = "Rooms";
-            this.roomsDataGridViewTextBoxColumn.HeaderText = "Rooms";
-            this.roomsDataGridViewTextBoxColumn.Name = "roomsDataGridViewTextBoxColumn";
-            // 
-            // conditionDataGridViewTextBoxColumn
-            // 
-            this.conditionDataGridViewTextBoxColumn.DataPropertyName = "Condition";
-            this.conditionDataGridViewTextBoxColumn.HeaderText = "Condition";
-            this.conditionDataGridViewTextBoxColumn.Name = "conditionDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // coordsDataGridViewTextBoxColumn
-            // 
-            this.coordsDataGridViewTextBoxColumn.DataPropertyName = "Coords";
-            this.coordsDataGridViewTextBoxColumn.HeaderText = "Coords";
-            this.coordsDataGridViewTextBoxColumn.Name = "coordsDataGridViewTextBoxColumn";
             // 
             // Menu
             // 
@@ -322,17 +362,17 @@
             this.Text = "Your Options";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.ManePanel.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flatGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contoraBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -348,7 +388,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource contoraBindingSource;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem agencyToolStripMenuItem;
@@ -356,14 +395,17 @@
         private System.Windows.Forms.ToolStripMenuItem programToolStripMenuItem;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.BindingSource flatBindingSource;
+        private System.Windows.Forms.ToolStripMenuItem editFlatToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deliteFlatToolStripMenuItem;
+        private System.Windows.Forms.DataGridView flatGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn neighbourhoodDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn conditionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn coordsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource flatBindingSource;
     }
 }

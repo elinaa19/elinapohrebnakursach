@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealtAgency", "RealtAgency.csproj", "{B18A074D-CC9F-47BA-9307-C3720B1C0767}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAgency", "..\TestAgency\TestAgency.csproj", "{C66EF2C9-59BD-41A5-86C2-0EF948EE90E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealAgencyLibrary2", "..\RealAgencyLibrary2\RealAgencyLibrary2.csproj", "{B7F8DDB4-9568-4AA1-B3FF-86C5512BDC63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{B18A074D-CC9F-47BA-9307-C3720B1C0767}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B18A074D-CC9F-47BA-9307-C3720B1C0767}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B18A074D-CC9F-47BA-9307-C3720B1C0767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C66EF2C9-59BD-41A5-86C2-0EF948EE90E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C66EF2C9-59BD-41A5-86C2-0EF948EE90E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C66EF2C9-59BD-41A5-86C2-0EF948EE90E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C66EF2C9-59BD-41A5-86C2-0EF948EE90E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7F8DDB4-9568-4AA1-B3FF-86C5512BDC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7F8DDB4-9568-4AA1-B3FF-86C5512BDC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7F8DDB4-9568-4AA1-B3FF-86C5512BDC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7F8DDB4-9568-4AA1-B3FF-86C5512BDC63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

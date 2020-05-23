@@ -60,38 +60,8 @@ namespace RealtAgency
                 string nickname;
                 int number;
                 int password;
-                bool isInt = int.TryParse(RegPassword.Text, out number);
-                bool isIntName = int.TryParse(RegName.Text, out number);
-                // Данные с полей
-                if (isIntName == true || isInt == false)
-                {
-                    if (isIntName == true)
-                    {
-
-                        RegName.BackColor = Color.MediumSeaGreen;
-                        MessageBox.Show("Name consists only of numbers, try again");
-                        RegName.Text = string.Empty;
-                        RegName.BackColor = Color.White;
-                    }
-                    else
-                    {
-                        nickname = RegName.Text;
-                    }
-                    if (isInt == false)
-                    {
-
-                        RegPassword.BackColor = Color.MediumSeaGreen;
-                        MessageBox.Show("Password consists not only of numbers, try again");
-                        RegPassword.Text = string.Empty;
-                        RegPassword.BackColor = Color.White;
-                    }
-                    else
-                    {
-                        password = Convert.ToInt32(RegPassword.Text);
-                    }
-                }
-                else
-                {
+                
+               
                     // Берем введенные данные с полей
                     string name = RegName.Text;
                     string pass = RegPassword.Text;
@@ -119,11 +89,10 @@ namespace RealtAgency
                         RegPassword.Text = string.Empty;
                     }
                 }
-            }
+            
         }
             
         
-
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -167,20 +136,51 @@ namespace RealtAgency
 
 
 
-        private void loginField_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void PasswordField_TextChanged(object sender, EventArgs e)
+   
+
+        private void RegName_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+        //Name
+        private void RegName_Enter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Clipboard.Clear();
 
         }
 
+        private void RegName_TextChanged(object sender, EventArgs e)
+        {
+            RegName.Text = RegName.Text.Replace(" ", " ");
+        }
+        //Password
+        private void RegPassword_TextChanged(object sender, EventArgs e)
+        {
+            RegPassword.Text = RegPassword.Text.Replace(" ", " ");
+        }
+
+        private void RegPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void RegPassword_Enter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Clipboard.Clear();
+        }
     }
 }

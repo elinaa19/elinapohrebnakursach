@@ -200,7 +200,9 @@
             this.RegPassword.TabIndex = 4;
             this.RegPassword.Text = "Password";
             this.RegPassword.UseSystemPasswordChar = true;
-            this.RegPassword.TextChanged += new System.EventHandler(this.PasswordField_TextChanged);
+            this.RegPassword.TextChanged += new System.EventHandler(this.RegPassword_TextChanged);
+            this.RegPassword.Enter += new System.EventHandler(this.RegPassword_Enter);
+            this.RegPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RegPassword_KeyPress);
             // 
             // pictureBox3
             // 
@@ -222,7 +224,9 @@
             this.RegName.Size = new System.Drawing.Size(213, 23);
             this.RegName.TabIndex = 2;
             this.RegName.Text = "Login";
-            this.RegName.TextChanged += new System.EventHandler(this.loginField_TextChanged);
+            this.RegName.TextChanged += new System.EventHandler(this.RegName_TextChanged);
+            this.RegName.Enter += new System.EventHandler(this.RegName_Enter);
+            this.RegName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RegName_KeyPress);
             // 
             // pictureBox4
             // 

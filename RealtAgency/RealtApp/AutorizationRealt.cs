@@ -13,12 +13,12 @@ namespace RealtAgency
 {
     public partial class AutorizationRealt : Form
     {
-       
+        internal Contora store;
         const string RealtPassword = "1904";
         const string RealtName = "Elina";
         public AutorizationRealt()
         {
-           
+            store = new Contora();
             InitializeComponent();
         }
 
@@ -26,7 +26,7 @@ namespace RealtAgency
 
         private void CustomerButton_Click(object sender, EventArgs e)
         {
-            Form CustomerAutor = Application.OpenForms[0];
+            Form CustomerAutor = new Autorization ();
             CustomerAutor.Left = this.Left;
             CustomerAutor.Top = this.Top;
             CustomerAutor.Show();
@@ -74,7 +74,7 @@ namespace RealtAgency
                 {
                     Realtor user = new Realtor(nickname, password);
                     
-                Form Menu = new Menu();
+                Form Menu = new Menu(ref store);
                 Menu.Left = this.Left;
                 Menu.Top = this.Top;
                 Menu.Show();
@@ -84,10 +84,49 @@ namespace RealtAgency
                 else
                 {
                     MessageBox.Show(" Please, check your name and  pass");
+                RealName.Clear();
+                RealPassword.Clear();
+
                 }
             }
-            
-                
+
+        //RealName textbox
+        private void RealName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && (e.KeyChar != 64) && (e.KeyChar != 45) &&
+                (e.KeyChar != 46) && (e.KeyChar != 95))
+            {
+                e.Handled = true;
+            }
+
+            RealName.MaxLength = 30;
+        }
+
+        private void RealName_TextChanged(object sender, EventArgs e)
+        {
+            RealName.Text = RealName.Text.Replace(" ", "");
+        }
+        //RealPassword TextBox
+
+        private void RealPassword_TextChanged(object sender, EventArgs e)
+        {
+            RealPassword.Text = RealPassword.Text.Replace(" ", "");
+        }
+
+        private void RealPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8))
+            {
+                e.Handled = true;
+            }
+
+            RealPassword.MaxLength = 30;
+        }
+
+        private void RealPassword_Enter(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Clipboard.Clear();
+        }
     }
 }
 

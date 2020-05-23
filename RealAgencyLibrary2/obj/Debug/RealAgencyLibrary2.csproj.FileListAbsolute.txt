@@ -1,0 +1,12 @@
+D:\Настя\kursach\kursach\elinapohrebnakursach\RealAgencyLibrary2\bin\Debug\RealAgencyLibrary2.dll
+D:\Настя\kursach\kursach\elinapohrebnakursach\RealAgencyLibrary2\bin\Debug\RealAgencyLibrary2.pdb
+D:\Настя\kursach\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.csproj.CoreCompileInputs.cache
+D:\Настя\kursach\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.dll
+D:\Настя\kursach\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.pdb
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealAgencyLibrary2\bin\Debug\flat.png
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealAgencyLibrary2\bin\Debug\RealAgencyLibrary2.dll
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealAgencyLibrary2\bin\Debug\RealAgencyLibrary2.pdb
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.csprojAssemblyReference.cache
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.csproj.CoreCompileInputs.cache
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.dll
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.pdb

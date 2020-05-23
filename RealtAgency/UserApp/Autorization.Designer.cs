@@ -146,6 +146,9 @@
             this.AutPassword.TabIndex = 4;
             this.AutPassword.Text = "Password";
             this.AutPassword.UseSystemPasswordChar = true;
+            this.AutPassword.TextChanged += new System.EventHandler(this.AutPassword_TextChanged);
+            this.AutPassword.Enter += new System.EventHandler(this.AutPassword_Enter);
+            this.AutPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AutPassword_KeyPress);
             // 
             // pictureBox2
             // 
@@ -167,6 +170,9 @@
             this.AutName.Size = new System.Drawing.Size(213, 23);
             this.AutName.TabIndex = 2;
             this.AutName.Text = "Login";
+            this.AutName.TextChanged += new System.EventHandler(this.AutName_TextChanged);
+            this.AutName.Enter += new System.EventHandler(this.AutName_Enter);
+            this.AutName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AutName_KeyPress);
             // 
             // pictureBox1
             // 
