@@ -84,7 +84,7 @@
             this.AddNewFlatButton.TabIndex = 11;
             this.AddNewFlatButton.Text = "Add new flat";
             this.AddNewFlatButton.UseVisualStyleBackColor = false;
-            this.AddNewFlatButton.Click += new System.EventHandler(this.AddNewFlatButton_Click);
+            
             // 
             // CloseButton
             // 
@@ -117,7 +117,7 @@
             this.ShowCustomersButton.TabIndex = 5;
             this.ShowCustomersButton.Text = "Show customers";
             this.ShowCustomersButton.UseVisualStyleBackColor = false;
-            this.ShowCustomersButton.Click += new System.EventHandler(this.ShowCustomersButton_Click);
+          
             // 
             // label1
             // 
@@ -146,7 +146,7 @@
             this.ManePanel.Name = "ManePanel";
             this.ManePanel.Size = new System.Drawing.Size(919, 520);
             this.ManePanel.TabIndex = 7;
-            this.ManePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ManePanel_Paint);
+            
             this.ManePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseDown);
             this.ManePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseMove);
             // 
@@ -275,7 +275,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(893, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+           
             // 
             // agencyToolStripMenuItem
             // 
@@ -360,7 +360,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
             this.Text = "Your Options";
-            this.Load += new System.EventHandler(this.Menu_Load);
+            
             this.ManePanel.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

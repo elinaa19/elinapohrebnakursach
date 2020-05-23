@@ -47,7 +47,7 @@ namespace RealtAgency
             LastPount = new Point(e.X, e.Y);
         }
 
-        private void AddNewFlatButton_Click(object sender, EventArgs e)
+      /*  private void AddNewFlatButton_Click(object sender, EventArgs e)
         {
             var pf = new AddFlat();
             if (pf.ShowDialog() == DialogResult.OK)
@@ -64,32 +64,9 @@ namespace RealtAgency
 
 
 
-        }
+        }*/
 
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ShowCustomersButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ManePanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+        
 
         private void deliteFlatToolStripMenuItem_Click(object sender, EventArgs e)
         {
