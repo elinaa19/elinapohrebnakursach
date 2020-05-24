@@ -28,14 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.ManePanel = new System.Windows.Forms.Panel();
+            this.customersGridView = new System.Windows.Forms.DataGridView();
+            this.buyerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CancelButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Close_Button = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ManePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buyerBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,12 +58,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Customers";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-           
             // 
             // ManePanel
             // 
             this.ManePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ManePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ManePanel.Controls.Add(this.customersGridView);
             this.ManePanel.Controls.Add(this.CancelButton);
             this.ManePanel.Controls.Add(this.panel2);
             this.ManePanel.Cursor = System.Windows.Forms.Cursors.Default;
@@ -65,9 +72,25 @@
             this.ManePanel.Name = "ManePanel";
             this.ManePanel.Size = new System.Drawing.Size(803, 478);
             this.ManePanel.TabIndex = 8;
-          
             this.ManePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseDown);
             this.ManePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseMove);
+            // 
+            // customersGridView
+            // 
+            this.customersGridView.AutoGenerateColumns = false;
+            this.customersGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customersGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn});
+            this.customersGridView.DataSource = this.buyerBindingSource;
+            this.customersGridView.Location = new System.Drawing.Point(22, 82);
+            this.customersGridView.Name = "customersGridView";
+            this.customersGridView.Size = new System.Drawing.Size(759, 334);
+            this.customersGridView.TabIndex = 12;
+            // 
+            // buyerBindingSource
+            // 
+            this.buyerBindingSource.DataSource = typeof(RealtAgency.Models.Buyer);
             // 
             // CancelButton
             // 
@@ -140,6 +163,19 @@
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 1;
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
             // ShowCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,8 +185,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ShowCustomers";
             this.Text = "ShowCustomers";
-           
             this.ManePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buyerBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -166,5 +203,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Close_Button;
         private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.DataGridView customersGridView;
+        private System.Windows.Forms.BindingSource buyerBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
     }
 }

@@ -125,7 +125,7 @@ namespace RealtAgency
                     if (store.Buyers.FirstOrDefault(u => u.Name == name && u.Password == password) != null)
                     {
                         MessageBox.Show($"Hello, Dear {name}! It's a pleasure to see you in our agency today!");
-                        Form Options = new YourOptions();
+                        Form Options = Application.OpenForms[0];
                         Options.Left = this.Left;
                         Options.Top = this.Top;
                         Options.Show();

@@ -17,7 +17,7 @@ namespace RealtAgency
         { //github check
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AutorizationRealt());
+            Application.Run(new Menu());
         }
     }
 }

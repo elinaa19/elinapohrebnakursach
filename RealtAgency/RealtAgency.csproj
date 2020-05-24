@@ -49,17 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RealtApp\AddFlat.cs">
+    <Compile Include="RealtApp\NewFlat.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RealtApp\AddFlat.Designer.cs">
-      <DependentUpon>AddFlat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RealtApp\AskSaveData.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RealtApp\AskSaveData.Designer.cs">
-      <DependentUpon>AskSaveData.cs</DependentUpon>
+    <Compile Include="RealtApp\NewFlat.Designer.cs">
+      <DependentUpon>NewFlat.cs</DependentUpon>
     </Compile>
     <Compile Include="UserApp\Autorization.cs">
       <SubType>Form</SubType>
@@ -93,23 +87,14 @@
     <Compile Include="RealtApp\ShowCustomers.Designer.cs">
       <DependentUpon>ShowCustomers.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserApp\YourLiked.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserApp\YourLiked.Designer.cs">
-      <DependentUpon>YourLiked.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserApp\YourOptions.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserApp\YourOptions.Designer.cs">
       <DependentUpon>YourOptions.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RealtApp\AddFlat.resx">
-      <DependentUpon>AddFlat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RealtApp\AskSaveData.resx">
-      <DependentUpon>AskSaveData.cs</DependentUpon>
+    <EmbeddedResource Include="RealtApp\NewFlat.resx">
+      <DependentUpon>NewFlat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserApp\Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>
@@ -136,16 +121,22 @@
     <EmbeddedResource Include="RealtApp\ShowCustomers.resx">
       <DependentUpon>ShowCustomers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserApp\YourLiked.resx">
-      <DependentUpon>YourLiked.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserApp\YourOptions.resx">
       <DependentUpon>YourOptions.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\RealAgencyLibrary2.UserControl1.datasource" />
+    <None Include="Properties\DataSources\RealtAgency.Data.Dao.datasource" />
     <None Include="Properties\DataSources\RealtAgency.Models.Buyer.datasource" />
+    <None Include="Properties\DataSources\RealtAgency.Models.Contora.datasource" />
     <None Include="Properties\DataSources\RealtAgency.Models.Flat.datasource" />
     <None Include="Properties\DataSources\RealtAgency.Models.Realtor.datasource" />
     <None Include="Properties\DataSources\RealtAgency.Models.User.datasource" />
+    <None Include="Properties\DataSources\RealtAgency.RealAgencyLibrary.Models.Criteria.datasource" />
+    <None Include="Properties\DataSources\RealtAgency.RealAgencyLibrary.Models.LikedFlats.datasource" />
+    <None Include="Properties\DataSources\RealtAgency.RealAgencyLibrary.Models.Portion.datasource" />
+    <None Include="Properties\DataSources\RealtAgency.RealAgencyLibrary.Models.Potencial.datasource" />
+    <None Include="Properties\DataSources\RealtAgency.RealAgencyLibrary.Models.Sold.datasource" />
+    <None Include="Properties\DataSources\RealtAgency.RealAgencyLibrary.Models.Suitable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -170,6 +161,9 @@
       <Project>{b7f8ddb4-9568-4aa1-b3ff-86c5512bdc63}</Project>
       <Name>RealAgencyLibrary2</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="flat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

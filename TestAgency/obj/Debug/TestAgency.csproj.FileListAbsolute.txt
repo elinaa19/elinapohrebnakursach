@@ -18,3 +18,6 @@ C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\TestAgency\obj\Debug\TestAge
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\TestAgency\obj\Debug\TestAgency.csproj.CopyComplete
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\TestAgency\obj\Debug\TestAgency.dll
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\TestAgency\obj\Debug\TestAgency.pdb
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\TestAgency\bin\Debug\flat.png
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\TestAgency\bin\Debug\RealAgencyLibrary2.dll
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\TestAgency\bin\Debug\RealAgencyLibrary2.pdb

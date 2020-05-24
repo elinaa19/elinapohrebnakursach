@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RealtAgency.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace RealtAgency.UserApp
 {
     public partial class YourOptions : Form
     {
+        internal Contora store;
         public YourOptions()
         {
             InitializeComponent();
+            //store = new Contora();
+            //store.FillTestData(10);
+            //criteriaBindingSource.DataSource = store.Flats;
+            //store.Load();
+            //criteriaBindingSource.ResetBindings(false);
         }
 
         private void Close_Button_Click(object sender, EventArgs e)
@@ -49,13 +56,6 @@ namespace RealtAgency.UserApp
             LastPount = new Point(e.X, e.Y);
         }
 
-        private void ShowLikedOnesButton_Click(object sender, EventArgs e)
-        {
-            Form Liked = new YourLiked();
-            Liked.Top = this.Top;
-            Liked.Left = this.Left;
-            Liked.Show();
-            this.Hide();
-        }
+        
     }
 }

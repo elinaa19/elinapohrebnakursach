@@ -12,20 +12,20 @@ using System.Windows.Forms;
 
 namespace RealtAgency
 {
-    public partial class AddFlat : Form
+    public partial class NewFlat : Form
     {
         public Flat flat{ set; get; }
 
 
         Contora store;
-        public AddFlat()
+        public NewFlat()
         {
             store = new Contora();
             InitializeComponent();
         }
 
         // To update an existing product.
-        public AddFlat(Flat Flat) : this()
+        public NewFlat(Flat Flat) : this()
         {
             flat = Flat;
             //  nameBox.Text = product.Name;

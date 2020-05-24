@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RealAgencyLibrary2\RealAgencyLibrary2.csproj">
+      <Project>{B7F8DDB4-9568-4AA1-B3FF-86C5512BDC63}</Project>
+      <Name>RealAgencyLibrary2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RealtAgency\RealtAgency.csproj">
       <Project>{b18a074d-cc9f-47ba-9307-c3720b1c0767}</Project>
       <Name>RealtAgency</Name>

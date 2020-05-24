@@ -13,6 +13,14 @@ namespace RealtAgency.RealAgencyLibrary.Models
         public string Rooms { set; get; }
         public string Condition { set; get; }
         public string Neighbourhood { set; get; }
+
+        public Criteria (string price, string rooms, string condition, string neighbourhood)
+        {
+            Price = price;
+            Rooms = rooms;
+            Condition = condition;
+            Neighbourhood = neighbourhood;
+        }
        
 
 

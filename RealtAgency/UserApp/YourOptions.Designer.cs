@@ -28,16 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.CloseButton = new System.Windows.Forms.Label();
             this.EditCriteriaButton = new System.Windows.Forms.Button();
             this.ShowLikedOnesButton = new System.Windows.Forms.Button();
             this.ManePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Close_Button = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Close_Button = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.criteriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.suitableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.portionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ManePanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.criteriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suitableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // CloseButton
@@ -87,12 +98,12 @@
             this.ShowLikedOnesButton.TabIndex = 5;
             this.ShowLikedOnesButton.Text = "Show liked ones";
             this.ShowLikedOnesButton.UseVisualStyleBackColor = false;
-            this.ShowLikedOnesButton.Click += new System.EventHandler(this.ShowLikedOnesButton_Click);
             // 
             // ManePanel
             // 
             this.ManePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ManePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ManePanel.Controls.Add(this.dataGridView1);
             this.ManePanel.Controls.Add(this.EditCriteriaButton);
             this.ManePanel.Controls.Add(this.ShowLikedOnesButton);
             this.ManePanel.Controls.Add(this.panel2);
@@ -118,6 +129,23 @@
             this.panel2.Size = new System.Drawing.Size(801, 58);
             this.panel2.TabIndex = 0;
             // 
+            // Close_Button
+            // 
+            this.Close_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Close_Button.BackColor = System.Drawing.Color.Transparent;
+            this.Close_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Close_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Close_Button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Close_Button.Location = new System.Drawing.Point(765, -1);
+            this.Close_Button.Name = "Close_Button";
+            this.Close_Button.Size = new System.Drawing.Size(37, 32);
+            this.Close_Button.TabIndex = 3;
+            this.Close_Button.Text = "x";
+            this.Close_Button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Close_Button.Click += new System.EventHandler(this.Close_Button_Click);
+            this.Close_Button.MouseEnter += new System.EventHandler(this.Close_Button_MouseEnter);
+            this.Close_Button.MouseLeave += new System.EventHandler(this.Close_Button_MouseLeave);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -137,25 +165,29 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(801, 58);
             this.label1.TabIndex = 0;
-            this.label1.Text = "MENU";
+            this.label1.Text = "Your options";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Close_Button
+            // dataGridView1
             // 
-            this.Close_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Close_Button.BackColor = System.Drawing.Color.Transparent;
-            this.Close_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Close_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Close_Button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Close_Button.Location = new System.Drawing.Point(765, -1);
-            this.Close_Button.Name = "Close_Button";
-            this.Close_Button.Size = new System.Drawing.Size(37, 32);
-            this.Close_Button.TabIndex = 3;
-            this.Close_Button.Text = "x";
-            this.Close_Button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Close_Button.Click += new System.EventHandler(this.Close_Button_Click);
-            this.Close_Button.MouseEnter += new System.EventHandler(this.Close_Button_MouseEnter);
-            this.Close_Button.MouseLeave += new System.EventHandler(this.Close_Button_MouseLeave);
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(11, 85);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(763, 325);
+            this.dataGridView1.TabIndex = 12;
+            // 
+            // criteriaBindingSource
+            // 
+            this.criteriaBindingSource.DataSource = typeof(RealtAgency.RealAgencyLibrary.Models.Criteria);
+            // 
+            // suitableBindingSource
+            // 
+            this.suitableBindingSource.DataSource = typeof(RealtAgency.RealAgencyLibrary.Models.Suitable);
+            // 
+            // portionBindingSource
+            // 
+            this.portionBindingSource.DataSource = typeof(RealtAgency.RealAgencyLibrary.Models.Portion);
             // 
             // YourOptions
             // 
@@ -170,6 +202,11 @@
             this.ManePanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.criteriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.suitableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,5 +221,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Close_Button;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource criteriaBindingSource;
+        private System.Windows.Forms.BindingSource suitableBindingSource;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource portionBindingSource;
     }
 }

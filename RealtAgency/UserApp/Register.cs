@@ -1,4 +1,5 @@
 ﻿using RealtAgency.Models;
+using RealtAgency.RealAgencyLibrary.Models;
 using RealtAgency.UserApp;
 using System;
 using System.Collections.Generic;
@@ -68,11 +69,16 @@ namespace RealtAgency
                     string cost = RegCost.Text;
                     string rooms = RegRooms.Text;
                     string neighb = RegNeighb.Text;
+                string condition = RegCondition.Text;
+
                     // Проверяем, есть ли в считанном ранее списке пользователь с таким ником и паролем
                     // Это LINQ выражение, которое сверяет данные каждого из элементов списка (u) с введенными данными
                     if (store.Buyers.FirstOrDefault(u => u.Name == name || u.Password == pass) == null)
                     {
                         Buyer user = new Buyer(name, pass);
+                    Criteria criteria = new Criteria(cost, rooms, neighb, condition);
+                    store.Criterias.Add(criteria);
+                    
                         store.Buyers.Add(user);
                         MessageBox.Show("We are glad to hear you joined us!");
                         store.Save();

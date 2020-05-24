@@ -51,6 +51,9 @@
             this.editFlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deliteFlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autirizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -70,6 +73,7 @@
             // 
             // AddNewFlatButton
             // 
+            this.AddNewFlatButton.AutoSize = true;
             this.AddNewFlatButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.AddNewFlatButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddNewFlatButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
@@ -78,13 +82,13 @@
             this.AddNewFlatButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.AddNewFlatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewFlatButton.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddNewFlatButton.Location = new System.Drawing.Point(55, 460);
+            this.AddNewFlatButton.Location = new System.Drawing.Point(48, 456);
             this.AddNewFlatButton.Name = "AddNewFlatButton";
-            this.AddNewFlatButton.Size = new System.Drawing.Size(201, 33);
+            this.AddNewFlatButton.Size = new System.Drawing.Size(201, 40);
             this.AddNewFlatButton.TabIndex = 11;
             this.AddNewFlatButton.Text = "Add new flat";
             this.AddNewFlatButton.UseVisualStyleBackColor = false;
-            
+            this.AddNewFlatButton.Click += new System.EventHandler(this.AddNewFlatButton_Click_1);
             // 
             // CloseButton
             // 
@@ -95,7 +99,7 @@
             this.CloseButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CloseButton.Location = new System.Drawing.Point(806, 0);
             this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(112, 32);
+            this.CloseButton.Size = new System.Drawing.Size(104, 32);
             this.CloseButton.TabIndex = 2;
             this.CloseButton.Text = "x";
             this.CloseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -111,13 +115,13 @@
             this.ShowCustomersButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.ShowCustomersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowCustomersButton.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ShowCustomersButton.Location = new System.Drawing.Point(579, 460);
+            this.ShowCustomersButton.Location = new System.Drawing.Point(558, 463);
             this.ShowCustomersButton.Name = "ShowCustomersButton";
             this.ShowCustomersButton.Size = new System.Drawing.Size(201, 33);
             this.ShowCustomersButton.TabIndex = 5;
             this.ShowCustomersButton.Text = "Show customers";
             this.ShowCustomersButton.UseVisualStyleBackColor = false;
-          
+            this.ShowCustomersButton.Click += new System.EventHandler(this.ShowCustomersButton_Click);
             // 
             // label1
             // 
@@ -127,13 +131,18 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(917, 58);
+            this.label1.Size = new System.Drawing.Size(909, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "MENU";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ManePanel
             // 
+            this.ManePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ManePanel.AutoScroll = true;
+            this.ManePanel.AutoSize = true;
+            this.ManePanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ManePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ManePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ManePanel.Controls.Add(this.tabControl1);
@@ -141,12 +150,10 @@
             this.ManePanel.Controls.Add(this.ShowCustomersButton);
             this.ManePanel.Controls.Add(this.panel2);
             this.ManePanel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ManePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ManePanel.Location = new System.Drawing.Point(0, 0);
             this.ManePanel.Name = "ManePanel";
-            this.ManePanel.Size = new System.Drawing.Size(919, 520);
+            this.ManePanel.Size = new System.Drawing.Size(911, 501);
             this.ManePanel.TabIndex = 7;
-            
             this.ManePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseDown);
             this.ManePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseMove);
             // 
@@ -158,6 +165,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(907, 390);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 12;
             // 
             // tabPage1
@@ -174,9 +182,10 @@
             // 
             // flatGridView
             // 
+            this.flatGridView.AllowDrop = true;
             this.flatGridView.AllowUserToAddRows = false;
             this.flatGridView.AutoGenerateColumns = false;
-            this.flatGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.flatGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.flatGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
             this.adressDataGridViewTextBoxColumn,
@@ -187,19 +196,21 @@
             this.imageDataGridViewImageColumn,
             this.coordsDataGridViewTextBoxColumn});
             this.flatGridView.DataSource = this.flatBindingSource;
-            this.flatGridView.Location = new System.Drawing.Point(3, 30);
+            this.flatGridView.Location = new System.Drawing.Point(6, 34);
             this.flatGridView.Name = "flatGridView";
             this.flatGridView.RowHeadersWidth = 51;
-            this.flatGridView.Size = new System.Drawing.Size(893, 334);
+            this.flatGridView.Size = new System.Drawing.Size(887, 324);
             this.flatGridView.TabIndex = 1;
+            this.flatGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.flatGridView_CellContentClick);
             // 
             // nameDataGridViewTextBoxColumn
             // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 44.44444F;
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
             // adressDataGridViewTextBoxColumn
             // 
@@ -207,7 +218,6 @@
             this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
             this.adressDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
-            this.adressDataGridViewTextBoxColumn.Width = 125;
             // 
             // neighbourhoodDataGridViewTextBoxColumn
             // 
@@ -215,7 +225,6 @@
             this.neighbourhoodDataGridViewTextBoxColumn.HeaderText = "Neighbourhood";
             this.neighbourhoodDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.neighbourhoodDataGridViewTextBoxColumn.Name = "neighbourhoodDataGridViewTextBoxColumn";
-            this.neighbourhoodDataGridViewTextBoxColumn.Width = 125;
             // 
             // roomsDataGridViewTextBoxColumn
             // 
@@ -223,7 +232,6 @@
             this.roomsDataGridViewTextBoxColumn.HeaderText = "Rooms";
             this.roomsDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.roomsDataGridViewTextBoxColumn.Name = "roomsDataGridViewTextBoxColumn";
-            this.roomsDataGridViewTextBoxColumn.Width = 125;
             // 
             // conditionDataGridViewTextBoxColumn
             // 
@@ -231,7 +239,6 @@
             this.conditionDataGridViewTextBoxColumn.HeaderText = "Condition";
             this.conditionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.conditionDataGridViewTextBoxColumn.Name = "conditionDataGridViewTextBoxColumn";
-            this.conditionDataGridViewTextBoxColumn.Width = 125;
             // 
             // priceDataGridViewTextBoxColumn
             // 
@@ -239,13 +246,14 @@
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 125;
             // 
             // imageDataGridViewImageColumn
             // 
             this.imageDataGridViewImageColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.imageDataGridViewImageColumn.DataPropertyName = "Image";
             this.imageDataGridViewImageColumn.HeaderText = "Image";
+            this.imageDataGridViewImageColumn.Image = global::RealtAgency.Properties.Resources.flat;
+            this.imageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.imageDataGridViewImageColumn.MinimumWidth = 6;
             this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
             this.imageDataGridViewImageColumn.Width = 42;
@@ -256,7 +264,6 @@
             this.coordsDataGridViewTextBoxColumn.HeaderText = "Coords";
             this.coordsDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.coordsDataGridViewTextBoxColumn.Name = "coordsDataGridViewTextBoxColumn";
-            this.coordsDataGridViewTextBoxColumn.Width = 125;
             // 
             // flatBindingSource
             // 
@@ -275,7 +282,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(893, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-           
             // 
             // agencyToolStripMenuItem
             // 
@@ -289,7 +295,7 @@
             // editFlatToolStripMenuItem
             // 
             this.editFlatToolStripMenuItem.Name = "editFlatToolStripMenuItem";
-            this.editFlatToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editFlatToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.editFlatToolStripMenuItem.Text = "Edit flat";
             this.editFlatToolStripMenuItem.Click += new System.EventHandler(this.editFlatToolStripMenuItem_Click);
             // 
@@ -302,9 +308,33 @@
             // 
             // programToolStripMenuItem
             // 
+            this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.autirizationToolStripMenuItem});
             this.programToolStripMenuItem.Name = "programToolStripMenuItem";
             this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.programToolStripMenuItem.Text = "Program";
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // autirizationToolStripMenuItem
+            // 
+            this.autirizationToolStripMenuItem.Name = "autirizationToolStripMenuItem";
+            this.autirizationToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.autirizationToolStripMenuItem.Text = "Autirization";
+            this.autirizationToolStripMenuItem.Click += new System.EventHandler(this.autirizationToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -331,7 +361,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(917, 58);
+            this.panel2.Size = new System.Drawing.Size(909, 58);
             this.panel2.TabIndex = 0;
             // 
             // label2
@@ -355,13 +385,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 520);
+            this.ClientSize = new System.Drawing.Size(931, 514);
             this.Controls.Add(this.ManePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
             this.Text = "Your Options";
-            
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.ManePanel.ResumeLayout(false);
+            this.ManePanel.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -374,6 +405,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contoraBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -399,6 +431,8 @@
         private System.Windows.Forms.ToolStripMenuItem editFlatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deliteFlatToolStripMenuItem;
         private System.Windows.Forms.DataGridView flatGridView;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn adressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn neighbourhoodDataGridViewTextBoxColumn;
@@ -407,5 +441,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn coordsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem autirizationToolStripMenuItem;
     }
 }

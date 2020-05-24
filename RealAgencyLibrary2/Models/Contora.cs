@@ -38,7 +38,9 @@ namespace RealtAgency.Models
             Criterias = new List<Criteria>();
             Portions = new List<Portion>();
         }
-       
+        // If any data changed.
+        public bool IsDirty;
+
         public void FillTestData(int n)
         {
             int a = 1;
@@ -87,13 +89,7 @@ namespace RealtAgency.Models
             {
                 if (i % 2 == 0) f = a;
                 else f = b;
-                Criterias.Add(new Criteria()
-                {
-                    Price = (i * 1000).ToString(),
-                    Rooms = f.ToString(),
-                    Condition = 9.ToString(),
-                    Neighbourhood = "Shevchenko"
-                }) ;
+                Criterias.Add(new Criteria((i * 1000).ToString(), f.ToString(), 9.ToString(), "Shevchenko")) ;
             }
             //Portions 
 
@@ -113,26 +109,6 @@ namespace RealtAgency.Models
 
 
 
-
-
-
-
-
-            /*         // Orders
-                         Orders.Clear();
-                         const int m = 5;
-                         for (int i = 0; i < n - m; i++)
-                         {
-                             var ps = new List<Portion>();
-                             for (int j = 0; j < m; j++)
-                             {
-                                 ps.Add(new Portion { Product = Products[i + j], Amount = j });
-                             }
-                             Orders.Add(new Order(ps, Buyers[i], DateTime.Now + TimeSpan.FromDays(i)));
-                         }
-                         // Supplies
-                         // ...
-                     */
         }
 
             public void Save()
@@ -144,11 +120,13 @@ namespace RealtAgency.Models
             public void Load()
             {
                 new Dao(this).Load();
-           
+                 IsDirty = false;
+
         }
        public void AddFlat(Flat flat)
         {
            Flats.Add(flat);
+           IsDirty = false;
         }
 
     } 

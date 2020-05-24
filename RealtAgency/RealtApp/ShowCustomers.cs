@@ -18,6 +18,11 @@ namespace RealtAgency
         {
             store = new Contora();
             InitializeComponent();
+             store.FillTestData(10);
+            store.Load();
+            buyerBindingSource.DataSource = store.Buyers;
+            buyerBindingSource.ResetBindings(false);
+
         }
 
         private void Close_Button_Click(object sender, EventArgs e)
@@ -53,7 +58,7 @@ namespace RealtAgency
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Form Main = new Menu(ref store);
+            Form Main = new Menu( );
             Main.Top = this.Top;
             Main.Left = this.Left;
             Main.Show();

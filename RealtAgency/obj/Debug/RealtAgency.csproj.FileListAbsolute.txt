@@ -20,15 +20,12 @@ C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\bin\Debug\RealtA
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\bin\Debug\RealtAgency.exe
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\bin\Debug\RealtAgency.pdb
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.csprojAssemblyReference.cache
-C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.AddFlat.resources
-C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.AskSaveData.resources
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.Autorization.resources
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.AutorizationRealt.resources
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.Menu.resources
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.Properties.Resources.resources
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.Register.resources
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.ShowCustomers.resources
-C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.UserApp.YourLiked.resources
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.UserApp.YourOptions.resources
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.csproj.GenerateResource.cache
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.csproj.CoreCompileInputs.cache
@@ -59,3 +56,4 @@ C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\bin\Debug\RealAg
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\bin\Debug\RealAgencyLibrary2.pdb
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.csproj.CopyComplete
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\bin\Debug\flat.png
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.NewFlat.resources

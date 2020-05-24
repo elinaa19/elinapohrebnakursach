@@ -74,7 +74,7 @@ namespace RealtAgency
                 {
                     Realtor user = new Realtor(nickname, password);
                     
-                Form Menu = new Menu(ref store);
+                Form Menu = new Menu();
                 Menu.Left = this.Left;
                 Menu.Top = this.Top;
                 Menu.Show();
