@@ -1,10 +1,12 @@
 ﻿using RealtAgency.Models;
+using RealtAgency.RealAgencyLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,16 +15,32 @@ namespace RealtAgency.UserApp
 {
     public partial class YourOptions : Form
     {
-        internal Contora store;
-        public YourOptions()
+        private Contora contora;
+        private List<Flat> presentFlat;
+        private Buyer presentByer;
+        private List <Criteria> presentCriteria;
+
+      //  internal Contora store;
+        public YourOptions(ref Contora contora, Buyer buyer)
         {
+           // store = new Contora();
+           
             InitializeComponent();
+          this.contora = contora;
+           this.presentByer = buyer;
+           presentFlat = new List<Flat>();
+
+            presentFlat.AddRange(contora.Flats.Where(o => Convert.ToInt32(o.Price) == 1000));
+            flatBindingSource.DataSource = presentFlat;
             //store = new Contora();
             //store.FillTestData(10);
             //criteriaBindingSource.DataSource = store.Flats;
             //store.Load();
             //criteriaBindingSource.ResetBindings(false);
+            
         }
+        
+        
 
         private void Close_Button_Click(object sender, EventArgs e)
         {

@@ -99,7 +99,7 @@ namespace RealtAgency
                 AutName.BackColor = Color.White;
                 AutPassword.BackColor = Color.White;
             }
-            else if (AutName.Text.Length <= 4 || AutName.Text.Length >= 10)
+            else if (AutName.Text.Length <=3 || AutName.Text.Length >= 10)
             {
                 AutName.BackColor = Color.MediumSeaGreen;
                 MessageBox.Show("Name has inappropriate length, try again");
@@ -125,8 +125,8 @@ namespace RealtAgency
                     if (store.Buyers.FirstOrDefault(u => u.Name == name && u.Password == password) != null)
                     {
                         MessageBox.Show($"Hello, Dear {name}! It's a pleasure to see you in our agency today!");
-                        Form Options = Application.OpenForms[0];
-                        Options.Left = this.Left;
+                        Form Options = new YourOptions(ref store, store.Buyers.FirstOrDefault(u => u.Name == name));
+                    Options.Left = this.Left;
                         Options.Top = this.Top;
                         Options.Show();
                         this.Hide();
@@ -140,15 +140,7 @@ namespace RealtAgency
             }
         
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ManePanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void Autorization_Load(object sender, EventArgs e)
         {

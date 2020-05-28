@@ -82,10 +82,10 @@ namespace RealtAgency
                         store.Buyers.Add(user);
                         MessageBox.Show("We are glad to hear you joined us!");
                         store.Save();
-                        Form Options = new YourOptions();
-                        Options.Left = this.Left;
-                        Options.Top = this.Top;
-                        Options.Show();
+                       // Form Options = new YourOptions();
+                        //Options.Left = this.Left;
+                      //  Options.Top = this.Top;
+                      //  Options.Show();
                         this.Hide();
                     }
                     else
@@ -140,15 +140,6 @@ namespace RealtAgency
             this.Hide();
         }
 
-
-
-       
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
    
 
         private void RegName_KeyPress(object sender, KeyPressEventArgs e)
@@ -187,6 +178,39 @@ namespace RealtAgency
         private void RegPassword_Enter(object sender, EventArgs e)
         {
             System.Windows.Forms.Clipboard.Clear();
+        }
+
+        private void RegCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void RegCondition_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void RegRooms_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+       
+        private void RegNeighb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

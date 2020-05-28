@@ -57,3 +57,4 @@ C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\bin\Debug\RealAg
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.csproj.CopyComplete
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\bin\Debug\flat.png
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\obj\Debug\RealtAgency.NewFlat.resources
+C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealtAgency\bin\Debug\MailChimp.Net.dll

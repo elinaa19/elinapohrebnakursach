@@ -46,6 +46,12 @@
             this.CloseButton = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ManePanel.SuspendLayout();
@@ -78,6 +84,12 @@
             // 
             this.ManePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ManePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ManePanel.Controls.Add(this.label9);
+            this.ManePanel.Controls.Add(this.label8);
+            this.ManePanel.Controls.Add(this.label7);
+            this.ManePanel.Controls.Add(this.label6);
+            this.ManePanel.Controls.Add(this.label5);
+            this.ManePanel.Controls.Add(this.label4);
             this.ManePanel.Controls.Add(this.BackButton);
             this.ManePanel.Controls.Add(this.RegCost);
             this.ManePanel.Controls.Add(this.RegRooms);
@@ -122,44 +134,50 @@
             this.RegCost.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegCost.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.RegCost.Location = new System.Drawing.Point(104, 242);
+            this.RegCost.MaxLength = 5;
             this.RegCost.Multiline = true;
             this.RegCost.Name = "RegCost";
             this.RegCost.Size = new System.Drawing.Size(213, 23);
             this.RegCost.TabIndex = 10;
-            this.RegCost.Text = "Cost (range from-to)";
+            this.RegCost.Text = "\r\n";
+            this.RegCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RegCost_KeyPress);
             // 
             // RegRooms
             // 
             this.RegRooms.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegRooms.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.RegRooms.Location = new System.Drawing.Point(104, 333);
+            this.RegRooms.MaxLength = 1;
             this.RegRooms.Multiline = true;
             this.RegRooms.Name = "RegRooms";
             this.RegRooms.Size = new System.Drawing.Size(213, 23);
             this.RegRooms.TabIndex = 9;
-            this.RegRooms.Text = "Amount of rooms";
+            this.RegRooms.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RegRooms_KeyPress);
             // 
             // RegCondition
             // 
             this.RegCondition.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegCondition.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.RegCondition.Location = new System.Drawing.Point(473, 242);
+            this.RegCondition.Location = new System.Drawing.Point(535, 242);
+            this.RegCondition.MaxLength = 2;
             this.RegCondition.Multiline = true;
             this.RegCondition.Name = "RegCondition";
             this.RegCondition.Size = new System.Drawing.Size(213, 23);
             this.RegCondition.TabIndex = 8;
-            this.RegCondition.Text = "Condition (range 1-10)";
+            this.RegCondition.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RegCondition_KeyPress);
             // 
             // RegNeighb
             // 
             this.RegNeighb.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegNeighb.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.RegNeighb.Location = new System.Drawing.Point(473, 333);
+            this.RegNeighb.Location = new System.Drawing.Point(531, 333);
+            this.RegNeighb.MaxLength = 15;
             this.RegNeighb.Multiline = true;
             this.RegNeighb.Name = "RegNeighb";
             this.RegNeighb.Size = new System.Drawing.Size(213, 23);
             this.RegNeighb.TabIndex = 7;
-            this.RegNeighb.Text = "Neighbourhood";
+          
+            this.RegNeighb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RegNeighb_KeyPress);
             // 
             // label3
             // 
@@ -195,10 +213,10 @@
             this.RegPassword.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.RegPassword.Location = new System.Drawing.Point(531, 113);
+            this.RegPassword.MaxLength = 10;
             this.RegPassword.Name = "RegPassword";
             this.RegPassword.Size = new System.Drawing.Size(213, 24);
             this.RegPassword.TabIndex = 4;
-            this.RegPassword.Text = "Password";
             this.RegPassword.UseSystemPasswordChar = true;
             this.RegPassword.TextChanged += new System.EventHandler(this.RegPassword_TextChanged);
             this.RegPassword.Enter += new System.EventHandler(this.RegPassword_Enter);
@@ -207,7 +225,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::RealtAgency.Properties.Resources.locker;
-            this.pictureBox3.Location = new System.Drawing.Point(485, 101);
+            this.pictureBox3.Location = new System.Drawing.Point(473, 101);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 36);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -219,11 +237,12 @@
             this.RegName.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegName.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.RegName.Location = new System.Drawing.Point(93, 114);
+            this.RegName.MaxLength = 5;
             this.RegName.Multiline = true;
             this.RegName.Name = "RegName";
             this.RegName.Size = new System.Drawing.Size(213, 23);
             this.RegName.TabIndex = 2;
-            this.RegName.Text = "Login";
+            this.RegName.Text = "\r\n";
             this.RegName.TextChanged += new System.EventHandler(this.RegName_TextChanged);
             this.RegName.Enter += new System.EventHandler(this.RegName_Enter);
             this.RegName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RegName_KeyPress);
@@ -288,7 +307,67 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Registration";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(100, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 19);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Login";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(531, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 19);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Password";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(61, 220);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 19);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Cost ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(7, 311);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(115, 19);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Anount of rooms";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(469, 220);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 19);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Condition";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(440, 311);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(96, 19);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Neigbourhood";
             // 
             // Register
             // 
@@ -333,5 +412,11 @@
         private System.Windows.Forms.TextBox RegNeighb;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

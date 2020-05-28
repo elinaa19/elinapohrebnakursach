@@ -41,6 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.CloseButton = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.ManePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +66,8 @@
             // 
             this.ManePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ManePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ManePanel.Controls.Add(this.label5);
+            this.ManePanel.Controls.Add(this.label4);
             this.ManePanel.Controls.Add(this.CustomerButton);
             this.ManePanel.Controls.Add(this.RealtorButton);
             this.ManePanel.Controls.Add(this.buttonEnter);
@@ -143,7 +147,6 @@
             this.RealPassword.Name = "RealPassword";
             this.RealPassword.Size = new System.Drawing.Size(213, 24);
             this.RealPassword.TabIndex = 4;
-            this.RealPassword.Text = "Password";
             this.RealPassword.UseSystemPasswordChar = true;
             this.RealPassword.TextChanged += new System.EventHandler(this.RealPassword_TextChanged);
             this.RealPassword.Enter += new System.EventHandler(this.RealPassword_Enter);
@@ -168,7 +171,6 @@
             this.RealName.Name = "RealName";
             this.RealName.Size = new System.Drawing.Size(213, 23);
             this.RealName.TabIndex = 2;
-            this.RealName.Text = "Login";
             this.RealName.TextChanged += new System.EventHandler(this.RealName_TextChanged);
             this.RealName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.RealName_KeyPress);
             // 
@@ -235,6 +237,26 @@
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 1;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(89, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 19);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Login";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(89, 139);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 19);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Password";
+            // 
             // AutorizationRealt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,5 +291,7 @@
         private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

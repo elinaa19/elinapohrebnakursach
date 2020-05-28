@@ -80,7 +80,9 @@ namespace RealtAgency.Models
 
             for ( i = 0; i <= n; i++)
             {
-               Buyers.Add(new Buyer($"Buyer{i}", "123"));
+                if (i % 2 == 0) f = a;
+                else f = b;
+                Buyers.Add(new Buyer($"Buyer{i}", "123"));
        
             }
             //Criterias 

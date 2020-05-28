@@ -41,6 +41,8 @@
             this.CloseButton = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.ManePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,6 +53,8 @@
             // 
             this.ManePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ManePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ManePanel.Controls.Add(this.label3);
+            this.ManePanel.Controls.Add(this.label4);
             this.ManePanel.Controls.Add(this.CustomerButton);
             this.ManePanel.Controls.Add(this.RealtorButton);
             this.ManePanel.Controls.Add(this.RegisterButton);
@@ -66,7 +70,7 @@
             this.ManePanel.Name = "ManePanel";
             this.ManePanel.Size = new System.Drawing.Size(409, 327);
             this.ManePanel.TabIndex = 0;
-            this.ManePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ManePanel_Paint);
+          
             this.ManePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseDown);
             this.ManePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseMove);
             // 
@@ -144,7 +148,6 @@
             this.AutPassword.Name = "AutPassword";
             this.AutPassword.Size = new System.Drawing.Size(213, 24);
             this.AutPassword.TabIndex = 4;
-            this.AutPassword.Text = "Password";
             this.AutPassword.UseSystemPasswordChar = true;
             this.AutPassword.TextChanged += new System.EventHandler(this.AutPassword_TextChanged);
             this.AutPassword.Enter += new System.EventHandler(this.AutPassword_Enter);
@@ -169,7 +172,6 @@
             this.AutName.Name = "AutName";
             this.AutName.Size = new System.Drawing.Size(213, 23);
             this.AutName.TabIndex = 2;
-            this.AutName.Text = "Login";
             this.AutName.TextChanged += new System.EventHandler(this.AutName_TextChanged);
             this.AutName.Enter += new System.EventHandler(this.AutName_Enter);
             this.AutName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AutName_KeyPress);
@@ -234,7 +236,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Autorizatoin";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(89, 79);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 19);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Login";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(89, 139);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 19);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Password";
             // 
             // Autorization
             // 
@@ -271,5 +293,7 @@
         private System.Windows.Forms.Label RegisterButton;
         private System.Windows.Forms.Button CustomerButton;
         private System.Windows.Forms.Button RealtorButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

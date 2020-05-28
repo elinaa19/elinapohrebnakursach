@@ -77,10 +77,7 @@ namespace RealtAgency
             }
         }
 
-        private void flatGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -143,6 +140,11 @@ namespace RealtAgency
             Customers.ShowDialog();
         }
 
-        
+       
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            store.Save();
+        }
     }
 }

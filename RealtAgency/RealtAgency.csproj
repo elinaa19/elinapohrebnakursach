@@ -36,6 +36,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MailChimp.Net, Version=4.2.1.0, Culture=neutral, PublicKeyToken=37d26d538413c581, processorArchitecture=MSIL">
+      <HintPath>packages\MailChimp.Net.V3.4.2.1\lib\net45\MailChimp.Net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -124,6 +127,7 @@
     <EmbeddedResource Include="UserApp\YourOptions.resx">
       <DependentUpon>YourOptions.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\RealAgencyLibrary2.UserControl1.datasource" />
     <None Include="Properties\DataSources\RealtAgency.Data.Dao.datasource" />
     <None Include="Properties\DataSources\RealtAgency.Models.Buyer.datasource" />

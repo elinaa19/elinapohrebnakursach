@@ -46,6 +46,13 @@
             this.CloseButton = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.ManePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -75,11 +82,12 @@
             this.nameField.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameField.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.nameField.Location = new System.Drawing.Point(31, 79);
+            this.nameField.MaxLength = 15;
             this.nameField.Name = "nameField";
             this.nameField.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.nameField.Size = new System.Drawing.Size(213, 24);
             this.nameField.TabIndex = 2;
-            this.nameField.Text = "Name";
+           
             // 
             // label1
             // 
@@ -93,7 +101,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Add flat";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+           
             // 
             // ManePanel
             // 
@@ -103,6 +111,13 @@
             this.ManePanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ManePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ManePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ManePanel.Controls.Add(this.label9);
+            this.ManePanel.Controls.Add(this.label8);
+            this.ManePanel.Controls.Add(this.label7);
+            this.ManePanel.Controls.Add(this.label6);
+            this.ManePanel.Controls.Add(this.label5);
+            this.ManePanel.Controls.Add(this.label3);
+            this.ManePanel.Controls.Add(this.label4);
             this.ManePanel.Controls.Add(this.pictureBox1);
             this.ManePanel.Controls.Add(this.adressField);
             this.ManePanel.Controls.Add(this.coordsField);
@@ -119,7 +134,7 @@
             this.ManePanel.Name = "ManePanel";
             this.ManePanel.Size = new System.Drawing.Size(631, 362);
             this.ManePanel.TabIndex = 7;
-            this.ManePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.ManePanel_Paint);
+          
             this.ManePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseDown);
             this.ManePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseMove);
             // 
@@ -139,22 +154,24 @@
             this.adressField.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adressField.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.adressField.Location = new System.Drawing.Point(31, 125);
+            this.adressField.MaxLength = 40;
             this.adressField.Multiline = true;
             this.adressField.Name = "adressField";
             this.adressField.Size = new System.Drawing.Size(213, 23);
             this.adressField.TabIndex = 14;
-            this.adressField.Text = "Adress";
+          
             // 
             // coordsField
             // 
             this.coordsField.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.coordsField.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.coordsField.Location = new System.Drawing.Point(31, 221);
+            this.coordsField.MaxLength = 12;
             this.coordsField.Multiline = true;
             this.coordsField.Name = "coordsField";
             this.coordsField.Size = new System.Drawing.Size(213, 23);
             this.coordsField.TabIndex = 12;
-            this.coordsField.Text = "Your coordinates";
+            this.coordsField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.coordsField_KeyPress);
             // 
             // BackButton
             // 
@@ -180,44 +197,48 @@
             this.priceField.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceField.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.priceField.Location = new System.Drawing.Point(338, 80);
+            this.priceField.MaxLength = 5;
             this.priceField.Multiline = true;
             this.priceField.Name = "priceField";
             this.priceField.Size = new System.Drawing.Size(213, 23);
             this.priceField.TabIndex = 10;
-            this.priceField.Text = "Cost ";
+            this.priceField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceField_KeyPress);
             // 
             // roomsField
             // 
             this.roomsField.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roomsField.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.roomsField.Location = new System.Drawing.Point(338, 125);
+            this.roomsField.MaxLength = 1;
             this.roomsField.Multiline = true;
             this.roomsField.Name = "roomsField";
             this.roomsField.Size = new System.Drawing.Size(213, 23);
             this.roomsField.TabIndex = 9;
-            this.roomsField.Text = "Amount of rooms";
+            this.roomsField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.roomsField_KeyPress);
             // 
             // conditionField
             // 
             this.conditionField.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conditionField.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.conditionField.Location = new System.Drawing.Point(338, 175);
+            this.conditionField.MaxLength = 2;
             this.conditionField.Multiline = true;
             this.conditionField.Name = "conditionField";
             this.conditionField.Size = new System.Drawing.Size(213, 23);
             this.conditionField.TabIndex = 8;
-            this.conditionField.Text = "Condition (range 1-10)";
+            this.conditionField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.conditionField_KeyPress);
             // 
             // neighField
             // 
             this.neighField.Font = new System.Drawing.Font("Lucida Calligraphy", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.neighField.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.neighField.Location = new System.Drawing.Point(31, 175);
+            this.neighField.MaxLength = 25;
             this.neighField.Multiline = true;
             this.neighField.Name = "neighField";
             this.neighField.Size = new System.Drawing.Size(213, 23);
             this.neighField.TabIndex = 7;
-            this.neighField.Text = "Neighbourhood";
+            this.neighField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.neighField_KeyPress);
             // 
             // panel2
             // 
@@ -239,9 +260,9 @@
             this.Close_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Close_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Close_Button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Close_Button.Location = new System.Drawing.Point(548, 0);
+            this.Close_Button.Location = new System.Drawing.Point(577, -1);
             this.Close_Button.Name = "Close_Button";
-            this.Close_Button.Size = new System.Drawing.Size(75, 32);
+            this.Close_Button.Size = new System.Drawing.Size(53, 32);
             this.Close_Button.TabIndex = 9;
             this.Close_Button.Text = "x";
             this.Close_Button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -272,13 +293,83 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+          
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(28, 61);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 18);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(28, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 18);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Adress";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(28, 154);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 18);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Neighbourhood";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(28, 201);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 18);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Your coordinates";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(335, 61);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 18);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Cost";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Comic Sans MS", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.Location = new System.Drawing.Point(335, 106);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 18);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Amount of rooms";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Comic Sans MS", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(335, 154);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 18);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Condition";
             // 
             // NewFlat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 353);
+            this.ClientSize = new System.Drawing.Size(636, 353);
             this.Controls.Add(this.ManePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NewFlat";
@@ -312,5 +403,12 @@
         private System.Windows.Forms.Label Close_Button;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
     }
 }

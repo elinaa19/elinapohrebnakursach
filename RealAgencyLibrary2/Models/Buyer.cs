@@ -12,13 +12,23 @@ namespace RealtAgency.Models
     [Serializable]
     public class Buyer: User
     {
-        public List<Criteria> Criterias { private set; get; }
-        public List <Suitable> Suitables{ private set; get; }
 
-        public Buyer(string name, string password)
+        //  public string Price { get; set; }
+        //  public string Rooms { set; get; }
+        //  public string Condition { set; get; }
+        //    public string Neighbourhood { set; get; }
+        public List<Criteria> YourFlats;
+
+
+        public Buyer(string name, string password/*, string price, string rooms, string condition, string neighbourhood*/)
         {
             Name = name;
             Password = password;
+            //  Price = price;
+            //   Rooms = rooms;
+            //   Condition = condition;
+            //   Neighbourhood = neighbourhood;
+            YourFlats = new List<Criteria> ();
         }
     }
 }

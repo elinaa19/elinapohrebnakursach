@@ -30,25 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             this.CloseButton = new System.Windows.Forms.Label();
-            this.EditCriteriaButton = new System.Windows.Forms.Button();
-            this.ShowLikedOnesButton = new System.Windows.Forms.Button();
             this.ManePanel = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Close_Button = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.criteriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.suitableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.portionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buyerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.conditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.neighbourhoodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ManePanel.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.criteriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suitableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buyerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // CloseButton
@@ -65,47 +72,11 @@
             this.CloseButton.Text = "x";
             this.CloseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // EditCriteriaButton
-            // 
-            this.EditCriteriaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
-            this.EditCriteriaButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EditCriteriaButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.EditCriteriaButton.FlatAppearance.BorderSize = 2;
-            this.EditCriteriaButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.EditCriteriaButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.EditCriteriaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditCriteriaButton.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EditCriteriaButton.Location = new System.Drawing.Point(28, 433);
-            this.EditCriteriaButton.Name = "EditCriteriaButton";
-            this.EditCriteriaButton.Size = new System.Drawing.Size(201, 33);
-            this.EditCriteriaButton.TabIndex = 11;
-            this.EditCriteriaButton.Text = "Edit your criteria";
-            this.EditCriteriaButton.UseVisualStyleBackColor = false;
-            // 
-            // ShowLikedOnesButton
-            // 
-            this.ShowLikedOnesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
-            this.ShowLikedOnesButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ShowLikedOnesButton.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.ShowLikedOnesButton.FlatAppearance.BorderSize = 2;
-            this.ShowLikedOnesButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(237)))), ((int)(((byte)(187)))));
-            this.ShowLikedOnesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.ShowLikedOnesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ShowLikedOnesButton.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ShowLikedOnesButton.Location = new System.Drawing.Point(573, 433);
-            this.ShowLikedOnesButton.Name = "ShowLikedOnesButton";
-            this.ShowLikedOnesButton.Size = new System.Drawing.Size(201, 33);
-            this.ShowLikedOnesButton.TabIndex = 5;
-            this.ShowLikedOnesButton.Text = "Show liked ones";
-            this.ShowLikedOnesButton.UseVisualStyleBackColor = false;
-            // 
             // ManePanel
             // 
             this.ManePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ManePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ManePanel.Controls.Add(this.dataGridView1);
-            this.ManePanel.Controls.Add(this.EditCriteriaButton);
-            this.ManePanel.Controls.Add(this.ShowLikedOnesButton);
             this.ManePanel.Controls.Add(this.panel2);
             this.ManePanel.Cursor = System.Windows.Forms.Cursors.Default;
             this.ManePanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -115,6 +86,23 @@
             this.ManePanel.TabIndex = 8;
             this.ManePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseDown);
             this.ManePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseMove);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.priceDataGridViewTextBoxColumn,
+            this.roomsDataGridViewTextBoxColumn,
+            this.conditionDataGridViewTextBoxColumn,
+            this.neighbourhoodDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.flatBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(11, 85);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(763, 325);
+            this.dataGridView1.TabIndex = 12;
             // 
             // panel2
             // 
@@ -168,15 +156,6 @@
             this.label1.Text = "Your options";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 85);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(763, 325);
-            this.dataGridView1.TabIndex = 12;
-            // 
             // criteriaBindingSource
             // 
             this.criteriaBindingSource.DataSource = typeof(RealtAgency.RealAgencyLibrary.Models.Criteria);
@@ -189,6 +168,44 @@
             // 
             this.portionBindingSource.DataSource = typeof(RealtAgency.RealAgencyLibrary.Models.Portion);
             // 
+            // buyerBindingSource
+            // 
+            this.buyerBindingSource.DataSource = typeof(RealtAgency.Models.Buyer);
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // roomsDataGridViewTextBoxColumn
+            // 
+            this.roomsDataGridViewTextBoxColumn.DataPropertyName = "Rooms";
+            this.roomsDataGridViewTextBoxColumn.HeaderText = "Rooms";
+            this.roomsDataGridViewTextBoxColumn.Name = "roomsDataGridViewTextBoxColumn";
+            // 
+            // conditionDataGridViewTextBoxColumn
+            // 
+            this.conditionDataGridViewTextBoxColumn.DataPropertyName = "Condition";
+            this.conditionDataGridViewTextBoxColumn.HeaderText = "Condition";
+            this.conditionDataGridViewTextBoxColumn.Name = "conditionDataGridViewTextBoxColumn";
+            // 
+            // neighbourhoodDataGridViewTextBoxColumn
+            // 
+            this.neighbourhoodDataGridViewTextBoxColumn.DataPropertyName = "Neighbourhood";
+            this.neighbourhoodDataGridViewTextBoxColumn.HeaderText = "Neighbourhood";
+            this.neighbourhoodDataGridViewTextBoxColumn.Name = "neighbourhoodDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // flatBindingSource
+            // 
+            this.flatBindingSource.DataSource = typeof(RealtAgency.Models.Flat);
+            // 
             // YourOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,13 +217,15 @@
             this.Name = "YourOptions";
             this.Text = "YourOptions";
             this.ManePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.criteriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suitableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buyerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -214,8 +233,6 @@
         #endregion
 
         private System.Windows.Forms.Label CloseButton;
-        private System.Windows.Forms.Button EditCriteriaButton;
-        private System.Windows.Forms.Button ShowLikedOnesButton;
         private System.Windows.Forms.Panel ManePanel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
@@ -226,5 +243,12 @@
         private System.Windows.Forms.BindingSource suitableBindingSource;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.BindingSource portionBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn conditionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn neighbourhoodDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource buyerBindingSource;
+        private System.Windows.Forms.BindingSource flatBindingSource;
     }
 }
