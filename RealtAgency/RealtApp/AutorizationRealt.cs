@@ -16,14 +16,15 @@ namespace RealtAgency
         internal Contora store;
         const string RealtPassword = "1904";
         const string RealtName = "Elina";
-        public AutorizationRealt()
+        public event Action<object, EventArgs> UserChanged;
+		public AutorizationRealt()
         {
             store = new Contora();
             InitializeComponent();
         }
 
         
-
+        // Кнопка переходу до клієнтської авторизації
         private void CustomerButton_Click(object sender, EventArgs e)
         {
             Form CustomerAutor = new Autorization ();
@@ -32,7 +33,7 @@ namespace RealtAgency
             CustomerAutor.Show();
             this.Hide();
         }
-
+        // Енопка Close
         private void label3_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -48,6 +49,7 @@ namespace RealtAgency
             CloseButton.ForeColor = Color.White;
         }
 
+        //Події та їх Функції для переміщення форми по екрану 
         Point LastPount;
         private void ManePanel_MouseMove(object sender, MouseEventArgs e)
         {
@@ -64,23 +66,21 @@ namespace RealtAgency
             LastPount = new Point(e.X, e.Y);
         }
 
+
+        // Кнопка Enter, перевірка внесених даних
         private void buttonEnter_Click(object sender, EventArgs e)
         {
-            // Берем введенные данные с полей
+          
             string nickname = RealName.Text;
             string password = RealPassword.Text;
            
                 if ( password == RealtPassword || nickname == RealtName)
                 {
+					this.Close();
                     Realtor user = new Realtor(nickname, password);
-                    
-                Form Menu = new Menu();
-                Menu.Left = this.Left;
-                Menu.Top = this.Top;
-                Menu.Show();
-                this.Hide();
-
-            }
+					UserChanged.Invoke(this, EventArgs.Empty);
+			       
+				}
                 else
                 {
                     MessageBox.Show(" Please, check your name and  pass");
@@ -89,6 +89,8 @@ namespace RealtAgency
 
                 }
             }
+
+        // Валідація вводу користувача
 
         //RealName textbox
         private void RealName_KeyPress(object sender, KeyPressEventArgs e)

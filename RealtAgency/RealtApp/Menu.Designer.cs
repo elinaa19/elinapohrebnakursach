@@ -33,12 +33,18 @@
             this.ShowCustomersButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ManePanel = new System.Windows.Forms.Panel();
-            this.flatBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.flatGridView = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.neighbourhoodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.conditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.coordsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,26 +53,28 @@
             this.agencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editFlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deliteFlatToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSearch = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.flatGridView = new System.Windows.Forms.DataGridView();
-            this.coordsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.conditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.neighbourhoodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.showAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManePanel.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flatGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contoraBindingSource)).BeginInit();
-            this.tabPage1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.flatGridView)).BeginInit();
-            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // AddNewFlatButton
@@ -81,9 +89,9 @@
             this.AddNewFlatButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.AddNewFlatButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNewFlatButton.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddNewFlatButton.Location = new System.Drawing.Point(67, 456);
+            this.AddNewFlatButton.Location = new System.Drawing.Point(67, 449);
             this.AddNewFlatButton.Name = "AddNewFlatButton";
-            this.AddNewFlatButton.Size = new System.Drawing.Size(201, 40);
+            this.AddNewFlatButton.Size = new System.Drawing.Size(201, 47);
             this.AddNewFlatButton.TabIndex = 11;
             this.AddNewFlatButton.Text = "Add new flat";
             this.AddNewFlatButton.UseVisualStyleBackColor = false;
@@ -100,12 +108,13 @@
             this.ShowCustomersButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.ShowCustomersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShowCustomersButton.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ShowCustomersButton.Location = new System.Drawing.Point(585, 458);
+            this.ShowCustomersButton.Location = new System.Drawing.Point(586, 458);
             this.ShowCustomersButton.Name = "ShowCustomersButton";
             this.ShowCustomersButton.Size = new System.Drawing.Size(201, 37);
             this.ShowCustomersButton.TabIndex = 5;
             this.ShowCustomersButton.Text = "Show customers";
-            this.ShowCustomersButton.UseVisualStyleBackColor = false;
+            this.ShowCustomersButton.UseVisualStyleBackColor = true;
+            this.ShowCustomersButton.Visible = false;
             this.ShowCustomersButton.Click += new System.EventHandler(this.ShowCustomersButton_Click);
             // 
             // label1
@@ -142,9 +151,249 @@
             this.ManePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseDown);
             this.ManePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseMove);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 64);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(909, 390);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tabControl1.TabIndex = 12;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.flatGridView);
+            this.tabPage1.Controls.Add(this.menuStrip1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(901, 364);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Agency";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // flatGridView
+            // 
+            this.flatGridView.AllowDrop = true;
+            this.flatGridView.AllowUserToAddRows = false;
+            this.flatGridView.AutoGenerateColumns = false;
+            this.flatGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.flatGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn,
+            this.adressDataGridViewTextBoxColumn,
+            this.neighbourhoodDataGridViewTextBoxColumn,
+            this.roomsDataGridViewTextBoxColumn,
+            this.conditionDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn,
+            this.imageDataGridViewImageColumn,
+            this.coordsDataGridViewTextBoxColumn});
+            this.flatGridView.DataSource = this.flatBindingSource;
+            this.flatGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flatGridView.Location = new System.Drawing.Point(3, 27);
+            this.flatGridView.Name = "flatGridView";
+            this.flatGridView.RowHeadersWidth = 51;
+            this.flatGridView.Size = new System.Drawing.Size(895, 334);
+            this.flatGridView.TabIndex = 1;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 44.44444F;
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // adressDataGridViewTextBoxColumn
+            // 
+            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
+            this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
+            this.adressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
+            // 
+            // neighbourhoodDataGridViewTextBoxColumn
+            // 
+            this.neighbourhoodDataGridViewTextBoxColumn.DataPropertyName = "Neighbourhood";
+            this.neighbourhoodDataGridViewTextBoxColumn.HeaderText = "Neighbourhood";
+            this.neighbourhoodDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.neighbourhoodDataGridViewTextBoxColumn.Name = "neighbourhoodDataGridViewTextBoxColumn";
+            // 
+            // roomsDataGridViewTextBoxColumn
+            // 
+            this.roomsDataGridViewTextBoxColumn.DataPropertyName = "Rooms";
+            this.roomsDataGridViewTextBoxColumn.HeaderText = "Rooms";
+            this.roomsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.roomsDataGridViewTextBoxColumn.Name = "roomsDataGridViewTextBoxColumn";
+            // 
+            // conditionDataGridViewTextBoxColumn
+            // 
+            this.conditionDataGridViewTextBoxColumn.DataPropertyName = "Condition";
+            this.conditionDataGridViewTextBoxColumn.HeaderText = "Condition";
+            this.conditionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.conditionDataGridViewTextBoxColumn.Name = "conditionDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // imageDataGridViewImageColumn
+            // 
+            this.imageDataGridViewImageColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.imageDataGridViewImageColumn.DataPropertyName = "Image";
+            this.imageDataGridViewImageColumn.HeaderText = "Image";
+            this.imageDataGridViewImageColumn.Image = global::RealtAgency.Properties.Resources.flat;
+            this.imageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imageDataGridViewImageColumn.MinimumWidth = 6;
+            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
+            this.imageDataGridViewImageColumn.Width = 42;
+            // 
+            // coordsDataGridViewTextBoxColumn
+            // 
+            this.coordsDataGridViewTextBoxColumn.DataPropertyName = "Coords";
+            this.coordsDataGridViewTextBoxColumn.HeaderText = "Coords";
+            this.coordsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.coordsDataGridViewTextBoxColumn.Name = "coordsDataGridViewTextBoxColumn";
+            // 
             // flatBindingSource
             // 
             this.flatBindingSource.DataSource = typeof(RealtAgency.Models.Flat);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.programToolStripMenuItem,
+            this.agencyToolStripMenuItem,
+            this.toolStripMenuItemSearch,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(895, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // programToolStripMenuItem
+            // 
+            this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loadToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.autirizationToolStripMenuItem});
+            this.programToolStripMenuItem.Name = "programToolStripMenuItem";
+            this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.programToolStripMenuItem.Text = "Program";
+            // 
+            // loadToolStripMenuItem
+            // 
+            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.loadToolStripMenuItem.Text = "Load";
+            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // autirizationToolStripMenuItem
+            // 
+            this.autirizationToolStripMenuItem.Name = "autirizationToolStripMenuItem";
+            this.autirizationToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.autirizationToolStripMenuItem.Text = "Authorization";
+            this.autirizationToolStripMenuItem.Click += new System.EventHandler(this.autirizationToolStripMenuItem_Click);
+            // 
+            // agencyToolStripMenuItem
+            // 
+            this.agencyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editFlatToolStripMenuItem,
+            this.deliteFlatToolStripMenuItem});
+            this.agencyToolStripMenuItem.Name = "agencyToolStripMenuItem";
+            this.agencyToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.agencyToolStripMenuItem.Text = "Agency";
+            // 
+            // editFlatToolStripMenuItem
+            // 
+            this.editFlatToolStripMenuItem.Name = "editFlatToolStripMenuItem";
+            this.editFlatToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.editFlatToolStripMenuItem.Text = "Edit flat";
+            this.editFlatToolStripMenuItem.Click += new System.EventHandler(this.editFlatToolStripMenuItem_Click);
+            // 
+            // deliteFlatToolStripMenuItem
+            // 
+            this.deliteFlatToolStripMenuItem.Name = "deliteFlatToolStripMenuItem";
+            this.deliteFlatToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.deliteFlatToolStripMenuItem.Text = "Delite flat";
+            this.deliteFlatToolStripMenuItem.Click += new System.EventHandler(this.deliteFlatToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItemSearch
+            // 
+            this.toolStripMenuItemSearch.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1,
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem5,
+            this.showAllToolStripMenuItem});
+            this.toolStripMenuItemSearch.Name = "toolStripMenuItemSearch";
+            this.toolStripMenuItemSearch.Size = new System.Drawing.Size(54, 20);
+            this.toolStripMenuItemSearch.Text = "Search";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Name";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "Adress";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Text = "Neighbourhood";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Text = "Rooms";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Text = "Price";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
             // 
             // panel2
             // 
@@ -174,190 +423,12 @@
             // 
             this.contoraBindingSource.DataSource = typeof(RealtAgency.Models.Contora);
             // 
-            // tabPage1
+            // showAllToolStripMenuItem
             // 
-            this.tabPage1.Controls.Add(this.flatGridView);
-            this.tabPage1.Controls.Add(this.menuStrip1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(900, 364);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Agency";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.programToolStripMenuItem,
-            this.agencyToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(3, 3);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(894, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // programToolStripMenuItem
-            // 
-            this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loadToolStripMenuItem,
-            this.saveToolStripMenuItem,
-            this.autirizationToolStripMenuItem});
-            this.programToolStripMenuItem.Name = "programToolStripMenuItem";
-            this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.programToolStripMenuItem.Text = "Program";
-            // 
-            // loadToolStripMenuItem
-            // 
-            this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.loadToolStripMenuItem.Text = "Load";
-            this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // autirizationToolStripMenuItem
-            // 
-            this.autirizationToolStripMenuItem.Name = "autirizationToolStripMenuItem";
-            this.autirizationToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.autirizationToolStripMenuItem.Text = "Autirization";
-            this.autirizationToolStripMenuItem.Click += new System.EventHandler(this.autirizationToolStripMenuItem_Click);
-            // 
-            // agencyToolStripMenuItem
-            // 
-            this.agencyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editFlatToolStripMenuItem,
-            this.deliteFlatToolStripMenuItem});
-            this.agencyToolStripMenuItem.Name = "agencyToolStripMenuItem";
-            this.agencyToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.agencyToolStripMenuItem.Text = "Agency";
-            // 
-            // editFlatToolStripMenuItem
-            // 
-            this.editFlatToolStripMenuItem.Name = "editFlatToolStripMenuItem";
-            this.editFlatToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.editFlatToolStripMenuItem.Text = "Edit flat";
-            this.editFlatToolStripMenuItem.Click += new System.EventHandler(this.editFlatToolStripMenuItem_Click);
-            // 
-            // deliteFlatToolStripMenuItem
-            // 
-            this.deliteFlatToolStripMenuItem.Name = "deliteFlatToolStripMenuItem";
-            this.deliteFlatToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.deliteFlatToolStripMenuItem.Text = "Delite flat";
-            this.deliteFlatToolStripMenuItem.Click += new System.EventHandler(this.deliteFlatToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // flatGridView
-            // 
-            this.flatGridView.AllowDrop = true;
-            this.flatGridView.AllowUserToAddRows = false;
-            this.flatGridView.AutoGenerateColumns = false;
-            this.flatGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.flatGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.adressDataGridViewTextBoxColumn,
-            this.neighbourhoodDataGridViewTextBoxColumn,
-            this.roomsDataGridViewTextBoxColumn,
-            this.conditionDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.imageDataGridViewImageColumn,
-            this.coordsDataGridViewTextBoxColumn});
-            this.flatGridView.DataSource = this.flatBindingSource;
-            this.flatGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flatGridView.Location = new System.Drawing.Point(3, 27);
-            this.flatGridView.Name = "flatGridView";
-            this.flatGridView.RowHeadersWidth = 51;
-            this.flatGridView.Size = new System.Drawing.Size(894, 334);
-            this.flatGridView.TabIndex = 1;
-          
-            // 
-            // coordsDataGridViewTextBoxColumn
-            // 
-            this.coordsDataGridViewTextBoxColumn.DataPropertyName = "Coords";
-            this.coordsDataGridViewTextBoxColumn.HeaderText = "Coords";
-            this.coordsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.coordsDataGridViewTextBoxColumn.Name = "coordsDataGridViewTextBoxColumn";
-            // 
-            // imageDataGridViewImageColumn
-            // 
-            this.imageDataGridViewImageColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.imageDataGridViewImageColumn.DataPropertyName = "Image";
-            this.imageDataGridViewImageColumn.HeaderText = "Image";
-            this.imageDataGridViewImageColumn.Image = global::RealtAgency.Properties.Resources.flat;
-            this.imageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.imageDataGridViewImageColumn.MinimumWidth = 6;
-            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
-            this.imageDataGridViewImageColumn.Width = 42;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // conditionDataGridViewTextBoxColumn
-            // 
-            this.conditionDataGridViewTextBoxColumn.DataPropertyName = "Condition";
-            this.conditionDataGridViewTextBoxColumn.HeaderText = "Condition";
-            this.conditionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.conditionDataGridViewTextBoxColumn.Name = "conditionDataGridViewTextBoxColumn";
-            // 
-            // roomsDataGridViewTextBoxColumn
-            // 
-            this.roomsDataGridViewTextBoxColumn.DataPropertyName = "Rooms";
-            this.roomsDataGridViewTextBoxColumn.HeaderText = "Rooms";
-            this.roomsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.roomsDataGridViewTextBoxColumn.Name = "roomsDataGridViewTextBoxColumn";
-            // 
-            // neighbourhoodDataGridViewTextBoxColumn
-            // 
-            this.neighbourhoodDataGridViewTextBoxColumn.DataPropertyName = "Neighbourhood";
-            this.neighbourhoodDataGridViewTextBoxColumn.HeaderText = "Neighbourhood";
-            this.neighbourhoodDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.neighbourhoodDataGridViewTextBoxColumn.Name = "neighbourhoodDataGridViewTextBoxColumn";
-            // 
-            // adressDataGridViewTextBoxColumn
-            // 
-            this.adressDataGridViewTextBoxColumn.DataPropertyName = "Adress";
-            this.adressDataGridViewTextBoxColumn.HeaderText = "Adress";
-            this.adressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.adressDataGridViewTextBoxColumn.Name = "adressDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.FillWeight = 44.44444F;
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 64);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(908, 390);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
-            this.tabControl1.TabIndex = 12;
+            this.showAllToolStripMenuItem.Name = "showAllToolStripMenuItem";
+            this.showAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showAllToolStripMenuItem.Text = "Show all";
+            this.showAllToolStripMenuItem.Click += new System.EventHandler(this.showAllToolStripMenuItem_Click);
             // 
             // Menu
             // 
@@ -367,20 +438,19 @@
             this.Controls.Add(this.ManePanel);
             this.Name = "Menu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
-           
             this.ManePanel.ResumeLayout(false);
             this.ManePanel.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.flatGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contoraBindingSource)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.flatGridView)).EndInit();
-            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,5 +487,13 @@
         private System.Windows.Forms.ToolStripMenuItem editFlatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deliteFlatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSearch;
+		private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+		private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem showAllToolStripMenuItem;
     }
 }

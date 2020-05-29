@@ -19,29 +19,20 @@ namespace RealtAgency.UserApp
         private List<Flat> presentFlat;
         private Buyer presentByer;
         private List <Criteria> presentCriteria;
+		
 
-      //  internal Contora store;
         public YourOptions(ref Contora contora, Buyer buyer)
         {
-           // store = new Contora();
-           
-            InitializeComponent();
+          InitializeComponent();
           this.contora = contora;
            this.presentByer = buyer;
            presentFlat = new List<Flat>();
-
-            presentFlat.AddRange(contora.Flats.Where(o => Convert.ToInt32(o.Price) == 1000));
+			presentFlat.AddRange(contora.Flats.Where(o => Convert.ToInt32(o.Price) == 5000));
             flatBindingSource.DataSource = presentFlat;
-            //store = new Contora();
-            //store.FillTestData(10);
-            //criteriaBindingSource.DataSource = store.Flats;
-            //store.Load();
-            //criteriaBindingSource.ResetBindings(false);
-            
         }
         
         
-
+        // Кнопка Close
         private void Close_Button_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -58,6 +49,7 @@ namespace RealtAgency.UserApp
             Close_Button.ForeColor = Color.Red;
         }
 
+        //Події та їх Функції для переміщення форми по екрану 
         Point LastPount;
         private void ManePanel_MouseMove(object sender, MouseEventArgs e)
         {

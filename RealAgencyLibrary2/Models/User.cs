@@ -9,7 +9,7 @@ namespace RealtAgency.Models
     [Serializable]
     public abstract class User
     {
-        // абстрактный пользователь от которого наследуются  риелтор и клиент: имя + пароль
+        // Абстрактний користувач від якого наслідується рвелтор та користувач: ім'я + пароль
 
         public string Name { set; get; }
         public string Password { set; get; }

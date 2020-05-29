@@ -17,12 +17,12 @@ namespace RealtAgency
     public partial class Menu : Form
     {
         internal Contora store;
-       
+        private AutorizationRealt ar;
+        private bool isAdmin;
         public Menu()
         {
             store = new Contora();
             InitializeComponent();
-            //store.FillTestData(10);
             flatBindingSource.DataSource = store.Flats;
             store.Load();
             flatBindingSource.ResetBindings(false);
@@ -33,6 +33,7 @@ namespace RealtAgency
             this.Close();
         }
 
+        //Події та їх Функції для переміщення форми по екрану 
         Point LastPount;
         private void ManePanel_MouseMove(object sender, MouseEventArgs e)
         {
@@ -50,7 +51,7 @@ namespace RealtAgency
         }
 
         
-
+        // Видалення елементу зі списку
         private void deliteFlatToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var toDel = flatGridView.SelectedRows[0 ].DataBoundItem as Flat;
@@ -66,6 +67,8 @@ namespace RealtAgency
           
         }
 
+
+        //Редагування елементу у списку
         private void editFlatToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var toEdit = flatGridView.SelectedRows[0].DataBoundItem as Flat;
@@ -78,13 +81,14 @@ namespace RealtAgency
         }
 
        
-
+        // Кнопка Load
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             store.Load();
             flatBindingSource.ResetBindings(false);
         }
 
+        // Закриття форми, збереження даних
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!store.IsDirty)
@@ -103,6 +107,7 @@ namespace RealtAgency
             }
         }
 
+        // Додавання квартири у список
         private void AddNewFlatButton_Click_1(object sender, EventArgs e)
         {
             var pf = new NewFlat();
@@ -111,28 +116,31 @@ namespace RealtAgency
                 store.AddFlat(pf.flat);
                 flatBindingSource.ResetBindings(false);
                 store.IsDirty = true;
-
-                // select and scroll to the last row
                 var lastIdx = flatGridView.Rows.Count - 1;
                 flatGridView.Rows[lastIdx].Selected = true;
                 flatGridView.FirstDisplayedScrollingRowIndex = lastIdx;
             }
 
-
-
         }
 
+        //Відкриття кнопки для авторизованого ріелтора
         private void autirizationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form Autorization = new AutorizationRealt();
-            Autorization.Top = this.Top;
-            Autorization.Left = this.Left;
-            Autorization.ShowDialog();
-            this.Hide();
+            ar = new AutorizationRealt();
+            ar.UserChanged += UserAuthorisation;
+			ar.Top = this.Top;
+            ar.Left = this.Left;
+            ar.ShowDialog();
 
         }
+        //event handler
+        private void UserAuthorisation(object sender, EventArgs e)
+        {
+	        isAdmin = !isAdmin;
+	        ShowCustomersButton.Visible = true;
+        }
 
-        private void ShowCustomersButton_Click(object sender, EventArgs e)
+		private void ShowCustomersButton_Click(object sender, EventArgs e)
         {
             Form Customers = new ShowCustomers();
             Customers.Top = this.Top;
@@ -140,11 +148,120 @@ namespace RealtAgency
             Customers.ShowDialog();
         }
 
-       
-
+       //Кнопка Save
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             store.Save();
+        }
+
+        // Пошук
+		private void toolStripMenuItem1_Click(object sender, EventArgs e)
+		{
+		
+			Flat fl = new Flat();
+			List<Flat> flats = new List<Flat>();
+            try
+            {
+                fl.Name = toolStripTextBox1.Text;
+                flats.AddRange(store.Flats.Where(o => o.Name == fl.Name));
+                flatBindingSource.DataSource = flats;
+            }
+            
+            catch
+            {
+                flats = store.Flats;
+            }
+			flatBindingSource.ResetBindings(false);
+			store.IsDirty = true;
+			store.Load();
+		}
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Flat fl = new Flat();
+            List<Flat> flats = new List<Flat>();
+            try
+            {
+                fl.Adress = toolStripTextBox1.Text;
+                flats.AddRange(store.Flats.Where(o => o.Adress == fl.Adress));
+                flatBindingSource.DataSource = flats;
+            }
+
+            catch
+            {
+                flats = store.Flats;
+            }
+            flatBindingSource.ResetBindings(false);
+            store.IsDirty = true;
+            store.Load();
+
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Flat fl = new Flat();
+            List<Flat> flats = new List<Flat>();
+            try
+            {
+                fl.Neighbourhood = toolStripTextBox1.Text;
+                flats.AddRange(store.Flats.Where(o => o.Neighbourhood == fl.Neighbourhood));
+                flatBindingSource.DataSource = flats;
+            }
+
+            catch
+            {
+                flats = store.Flats;
+            }
+            flatBindingSource.ResetBindings(false);
+            store.IsDirty = true;
+            store.Load();
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            Flat fl = new Flat();
+            List<Flat> flats = new List<Flat>();
+            try
+            {
+                fl.Rooms = toolStripTextBox1.Text;
+                flats.AddRange(store.Flats.Where(o => Convert.ToInt32(o.Rooms) == Convert.ToInt32(fl.Rooms)));
+                flatBindingSource.DataSource = flats;
+            }
+
+            catch
+            {
+                flats = store.Flats;
+            }
+            flatBindingSource.ResetBindings(false);
+            store.IsDirty = true;
+            store.Load();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            Flat fl = new Flat();
+            List<Flat> flats = new List<Flat>();
+            try
+            {
+                fl.Price = toolStripTextBox1.Text;
+                flats.AddRange(store.Flats.Where(o => Convert.ToInt32(o.Price) == Convert.ToInt32(fl.Price)));
+                flatBindingSource.DataSource = flats;
+            }
+
+            catch
+            {
+                flats = store.Flats;
+            }
+            flatBindingSource.ResetBindings(false);
+            store.IsDirty = true;
+            store.Load();
+        }
+
+        private void showAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            flatBindingSource.DataSource = store.Flats;
+            store.Load();
+            flatBindingSource.ResetBindings(false);
         }
     }
 }

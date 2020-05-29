@@ -162,7 +162,7 @@
             // 
             // suitableBindingSource
             // 
-            this.suitableBindingSource.DataSource = typeof(RealtAgency.RealAgencyLibrary.Models.Suitable);
+           
             // 
             // portionBindingSource
             // 

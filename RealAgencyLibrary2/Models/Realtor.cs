@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RealtAgency.Models
 {
-    // Администратор -  имя + пароль.
+  
+    // Ріелтор - це ім'я + пароль.
     [Serializable]
     public class Realtor : User
     {

@@ -267,7 +267,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Autorization";
             this.Text = "Autorization";
-            this.Load += new System.EventHandler(this.Autorization_Load);
+       
             this.ManePanel.ResumeLayout(false);
             this.ManePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

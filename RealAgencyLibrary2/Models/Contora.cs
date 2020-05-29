@@ -13,17 +13,12 @@ using System.Drawing;
 
 namespace RealtAgency.Models
 {
-
-    // Риэлтерская контора — это несколько коллекций: пользователей, квартир, подходящих квартир, проданных квартир, подходящих пользователей
-
+    //Ріелтірська контора - це декілька колекцій : користувачів, квартир, порцій, крітерій.
     [Serializable]
     public class Contora
     {
         public List<Flat> Flats { private set; get; }
         public List<Buyer> Buyers { private set; get; }
-        public List<Potencial> Potencials { private set; get; }
-        public List<Sold> Solds { private set; get; }
-        public List<Suitable> Suitables { private set; get; }
         public List<Portion> Portions { private set; get; }
         public List <Criteria> Criterias { private set; get; }
 
@@ -32,9 +27,6 @@ namespace RealtAgency.Models
         {
             Flats = new List<Flat>();
             Buyers = new List<Buyer>();
-           // Potencials = new List<Potencial>();
-           // Solds = new List<Sold>();
-           // Suitables = new List<Suitable>();
             Criterias = new List<Criteria>();
             Portions = new List<Portion>();
         }
@@ -100,16 +92,6 @@ namespace RealtAgency.Models
             {
                 Portions.Add(new Portion { Buyer = Buyers[(i)], Criteria = Criterias[(i)] });
             }
-
-
-
-           
-
-            // Potencials
-
-            // Potencials = new List<Potencial>();
-
-
 
         }
 

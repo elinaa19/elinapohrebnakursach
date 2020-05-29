@@ -24,14 +24,10 @@ namespace RealtAgency
             InitializeComponent();
         }
 
-        // To update an existing product.
+        // Редагування квартири
         public NewFlat(Flat Flat) : this()
         {
             flat = Flat;
-            //  nameBox.Text = product.Name;
-            // unitBox.Text = product.Unit;
-            // priceBox.Value = product.Price;
-            //  pictureBox.Image = product.Image;
             nameField.Text = Flat.Name;
             adressField.Text = Flat.Adress;
             neighField.Text = Flat.Neighbourhood;
@@ -42,18 +38,20 @@ namespace RealtAgency
             Flat.Image = null;
         }
 
-
+        // Кнопка Close
             private void Close_Button_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Кнопка Back
         private void BackButton_Click(object sender, EventArgs e)
         {
             
             this.Hide();
         }
 
+        // Кнопка Close
         private void Close_Button_MouseEnter(object sender, EventArgs e)
         {
             Close_Button.ForeColor = Color.Red;
@@ -64,6 +62,7 @@ namespace RealtAgency
             Close_Button.ForeColor = Color.White;
         }
 
+        //Події та їх Функції для переміщення форми по екрану 
         Point LastPount;
         private void ManePanel_MouseMove(object sender, MouseEventArgs e)
         {
@@ -80,8 +79,7 @@ namespace RealtAgency
             LastPount = new Point(e.X, e.Y);
         }
 
-       
-
+        //Закриття форми, збереження даних
         private void AddFlat_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (DialogResult != DialogResult.OK)
@@ -94,6 +92,8 @@ namespace RealtAgency
             RequiredValidate(priceField, e);
             RequiredValidate(coordsField, e);
         }
+
+        // Валідація вводу користувача
         private void RequiredValidate(Control c, FormClosingEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(c.Text))
@@ -103,6 +103,7 @@ namespace RealtAgency
             }
         }
 
+        //Додавання квартири
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             if (flat == null)
@@ -118,7 +119,8 @@ namespace RealtAgency
             flat.Coords = coordsField.Text;
             flat.Image = pictureBox1.Image;
         }
-
+        
+        //Зображення
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -128,7 +130,7 @@ namespace RealtAgency
         }
 
        
-
+        //Валідація вводу користувача
         private void priceField_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
@@ -152,11 +154,6 @@ namespace RealtAgency
                 e.Handled = true;
             }
         }
-
-       
-
-       
-
         private void neighField_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
@@ -164,7 +161,6 @@ namespace RealtAgency
                 e.Handled = true;
             }
         }
-
         private void coordsField_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))

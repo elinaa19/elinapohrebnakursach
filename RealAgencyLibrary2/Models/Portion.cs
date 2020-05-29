@@ -9,7 +9,7 @@ using RealtAgency.Models;
 namespace RealtAgency.RealAgencyLibrary.Models
 {
     [Serializable]
-
+    // Порція - це покупець та його крітерії
     public class Portion
     {
         public Buyer Buyer { set; get; }

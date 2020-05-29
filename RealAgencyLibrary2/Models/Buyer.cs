@@ -8,26 +8,19 @@ using RealtAgency.Models;
 
 namespace RealtAgency.Models
 {
-    //Клиент -  имя + пароль.
+    //Покупець - це ім'я + пароль.
     [Serializable]
     public class Buyer: User
     {
 
-        //  public string Price { get; set; }
-        //  public string Rooms { set; get; }
-        //  public string Condition { set; get; }
-        //    public string Neighbourhood { set; get; }
+       
         public List<Criteria> YourFlats;
 
 
-        public Buyer(string name, string password/*, string price, string rooms, string condition, string neighbourhood*/)
+        public Buyer(string name, string password)
         {
             Name = name;
             Password = password;
-            //  Price = price;
-            //   Rooms = rooms;
-            //   Condition = condition;
-            //   Neighbourhood = neighbourhood;
             YourFlats = new List<Criteria> ();
         }
     }

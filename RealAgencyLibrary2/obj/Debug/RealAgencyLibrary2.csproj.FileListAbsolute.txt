@@ -10,3 +10,10 @@ C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.csproj.CoreCompileInputs.cache
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.dll
 C:\Users\Elina\Desktop\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.pdb
+C:\kursach\elinapohrebnakursach\RealAgencyLibrary2\bin\Debug\flat.png
+C:\kursach\elinapohrebnakursach\RealAgencyLibrary2\bin\Debug\RealAgencyLibrary2.dll
+C:\kursach\elinapohrebnakursach\RealAgencyLibrary2\bin\Debug\RealAgencyLibrary2.pdb
+C:\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.csprojAssemblyReference.cache
+C:\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.csproj.CoreCompileInputs.cache
+C:\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.dll
+C:\kursach\elinapohrebnakursach\RealAgencyLibrary2\obj\Debug\RealAgencyLibrary2.pdb

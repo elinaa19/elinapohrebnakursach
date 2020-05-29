@@ -43,17 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAI\Dao.cs" />
-    <Compile Include="DAI\Dao1.cs" />
     <Compile Include="Models\Buyer.cs" />
     <Compile Include="Models\Contora.cs" />
     <Compile Include="Models\Criteria.cs" />
     <Compile Include="Models\Flat.cs" />
-    <Compile Include="Models\LikedFlats.cs" />
     <Compile Include="Models\Portion.cs" />
-    <Compile Include="Models\Potencial.cs" />
     <Compile Include="Models\Realtor.cs" />
-    <Compile Include="Models\Sold.cs" />
-    <Compile Include="Models\Suitable.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="UserControl1.cs">
       <SubType>UserControl</SubType>

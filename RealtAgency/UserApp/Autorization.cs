@@ -26,24 +26,21 @@ namespace RealtAgency
 
         }
 
-
+        // Кнопка Закриття
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void CloseButton_MouseEnter(object sender, EventArgs e)
         {
             CloseButton.ForeColor = Color.Red;
         }
-
-       
-
         private void CloseButton_MouseLeave(object sender, EventArgs e)
         {
             CloseButton.ForeColor = Color.White;
         }
 
+        //Події та їх Функції для переміщення форми по екрану 
         Point LastPount;
         private void ManePanel_MouseMove(object sender, MouseEventArgs e)
         {
@@ -54,12 +51,12 @@ namespace RealtAgency
 
             }
         }
-
         private void ManePanel_MouseDown(object sender, MouseEventArgs e)
         {
             LastPount = new Point(e.X, e.Y);
         }
 
+        // Відкриття форми реєстрації
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             Form Register = new Register(ref store);
@@ -70,6 +67,7 @@ namespace RealtAgency
             this.Hide();
         }
 
+        // Відкриття форми ріелторської авторизації
         private void RealtorButton_Click(object sender, EventArgs e)
         {
             Form Realt = new AutorizationRealt();
@@ -80,6 +78,7 @@ namespace RealtAgency
 
         }
 
+        //Кнопка Enter, перевірка внесених даних
         private void buttonEnter_Click(object sender, EventArgs e)
         {
             string name = AutName.Text;
@@ -88,20 +87,20 @@ namespace RealtAgency
             {
                 if (string.IsNullOrWhiteSpace(AutName.Text))
                 {
-                    AutName.BackColor = Color.MediumSeaGreen;
+                    AutName.BackColor = Color.Red;
                 }
                 if (string.IsNullOrWhiteSpace(AutPassword.Text))
                 {
 
-                    AutPassword.BackColor = Color.MediumSeaGreen;
+                    AutPassword.BackColor = Color.Red;
                 }
                 MessageBox.Show("Fill in the blank space, please");
                 AutName.BackColor = Color.White;
                 AutPassword.BackColor = Color.White;
             }
-            else if (AutName.Text.Length <=3 || AutName.Text.Length >= 10)
+            else if (AutName.Text.Length < 3 || AutName.Text.Length >= 10)
             {
-                AutName.BackColor = Color.MediumSeaGreen;
+                AutName.BackColor = Color.Red;
                 MessageBox.Show("Name has inappropriate length, try again");
                 AutName.BackColor = Color.White;
                 AutName.Text = string.Empty;
@@ -109,7 +108,7 @@ namespace RealtAgency
             else if (AutPassword.Text.Length < 2 || AutPassword.Text.Length >= 10)
            
             {
-                AutPassword.BackColor = Color.MediumSeaGreen;
+                AutPassword.BackColor = Color.Red;
                 MessageBox.Show("Password has inappropriate length, try again");
                 AutPassword.BackColor = Color.White;
                 AutPassword.Text = string.Empty;
@@ -118,9 +117,7 @@ namespace RealtAgency
             {
 
                 string nickname;
-                int number;
-                int pass;
-               
+              
                     nickname = AutName.Text;
                     if (store.Buyers.FirstOrDefault(u => u.Name == name && u.Password == password) != null)
                     {
@@ -139,13 +136,7 @@ namespace RealtAgency
                 }
             }
         
-
-       
-
-        private void Autorization_Load(object sender, EventArgs e)
-        {
-
-        }
+        //Валідація вводу користувача
         //Name
         private void AutName_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -21,6 +21,11 @@ namespace RealtAgency.RealAgencyLibrary.Models
             Condition = condition;
             Neighbourhood = neighbourhood;
         }
+
+        public Criteria()
+        {
+
+        }
        
 
 

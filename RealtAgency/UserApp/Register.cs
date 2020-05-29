@@ -16,14 +16,19 @@ namespace RealtAgency
     public partial class Register : Form
     {
         internal Contora store;
+        public string cost;
+
+        public Register()
+        {
+
+        }
         public Register(ref Contora store)
         {
             this.store = store;
-           
             InitializeComponent();
         }
 
-
+        // Додавання покупця
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(RegName.Text) || string.IsNullOrWhiteSpace(RegPassword.Text))
@@ -43,36 +48,27 @@ namespace RealtAgency
             }
             else if (RegName.Text.Length < 2 || RegName.Text.Length >= 10)
             {
-                RegName.BackColor = Color.MediumSeaGreen;
+                RegName.BackColor = Color.Red;
                 MessageBox.Show("Name has inappropriate length, try again");
                 RegName.BackColor = Color.White;
                 RegName.Text = string.Empty;
             }
             else if (RegPassword.Text.Length < 2 || RegPassword.Text.Length >= 10)
             {
-                RegPassword.BackColor = Color.MediumSeaGreen;
+                RegPassword.BackColor = Color.Red;
                 MessageBox.Show("Password has inappropriate length, try again");
                 RegPassword.BackColor = Color.White;
                 RegPassword.Text = string.Empty;
             }
             else
             {
-
-                string nickname;
-                int number;
-                int password;
-                
-               
-                    // Берем введенные данные с полей
                     string name = RegName.Text;
                     string pass = RegPassword.Text;
-                    string cost = RegCost.Text;
+                    cost = comboBoxRegCost.Text;
                     string rooms = RegRooms.Text;
                     string neighb = RegNeighb.Text;
                 string condition = RegCondition.Text;
 
-                    // Проверяем, есть ли в считанном ранее списке пользователь с таким ником и паролем
-                    // Это LINQ выражение, которое сверяет данные каждого из элементов списка (u) с введенными данными
                     if (store.Buyers.FirstOrDefault(u => u.Name == name || u.Password == pass) == null)
                     {
                         Buyer user = new Buyer(name, pass);
@@ -82,10 +78,6 @@ namespace RealtAgency
                         store.Buyers.Add(user);
                         MessageBox.Show("We are glad to hear you joined us!");
                         store.Save();
-                       // Form Options = new YourOptions();
-                        //Options.Left = this.Left;
-                      //  Options.Top = this.Top;
-                      //  Options.Show();
                         this.Hide();
                     }
                     else
@@ -95,26 +87,23 @@ namespace RealtAgency
                         RegPassword.Text = string.Empty;
                     }
                 }
-            
         }
             
-        
+        // Кнопка Close
         private void CloseButton_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void CloseButton_MouseEnter(object sender, EventArgs e)
         {
             CloseButton.ForeColor = Color.Red;
         }
-
         private void CloseButton_MouseLeave(object sender, EventArgs e)
         {
             CloseButton.ForeColor = Color.White;
         }
 
-
+        //Події та їх Функції для переміщення форми по екрану 
         Point LastPount;
         private void ManePanel_MouseMove(object sender, MouseEventArgs e)
         {
@@ -125,12 +114,12 @@ namespace RealtAgency
 
             }
         }
-
         private void ManePanel_MouseDown(object sender, MouseEventArgs e)
         {
             LastPount = new Point(e.X, e.Y);
         }
 
+        // Кнопка Back
         private void BackButton_Click(object sender, EventArgs e)
         {
             Form Autorization1 = Application.OpenForms[0];
@@ -141,7 +130,7 @@ namespace RealtAgency
         }
 
    
-
+        // Валідація вводу користувача
         private void RegName_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
@@ -179,15 +168,7 @@ namespace RealtAgency
         {
             System.Windows.Forms.Clipboard.Clear();
         }
-
-        private void RegCost_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
+        //Condition
         private void RegCondition_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
@@ -195,7 +176,7 @@ namespace RealtAgency
                 e.Handled = true;
             }
         }
-
+        //Rooms
         private void RegRooms_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsNumber(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
@@ -204,7 +185,7 @@ namespace RealtAgency
             }
         }
 
-       
+       //Neghbourhood
         private void RegNeighb_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
@@ -212,5 +193,13 @@ namespace RealtAgency
                 e.Handled = true;
             }
         }
-    }
+        //Price
+		private void comboBoxRegCost_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsNumber(e.KeyChar) && (e.KeyChar != 32) && (e.KeyChar != 8) && !char.IsControl(e.KeyChar))
+			{
+				e.Handled = true;
+			}
+		}
+	}
 }
