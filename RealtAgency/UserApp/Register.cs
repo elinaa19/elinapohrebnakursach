@@ -201,5 +201,11 @@ namespace RealtAgency
 				e.Handled = true;
 			}
 		}
-	}
+
+        // Повідомлення  користувачу
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please, fill all the fields to register in our app. Your password should be from 3 to 10 characters, using only numbers.");
+        }
+    }
 }

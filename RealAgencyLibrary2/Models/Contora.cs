@@ -1,14 +1,10 @@
-﻿using RealtAgency.RealAgencyLibrary;
+﻿
 using RealtAgency.Data;
 using RealtAgency.RealAgencyLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.InteropServices;
-using System.Runtime.Serialization;
+
 using System.Drawing;
 
 namespace RealtAgency.Models
@@ -19,7 +15,7 @@ namespace RealtAgency.Models
     {
         public List<Flat> Flats { private set; get; }
         public List<Buyer> Buyers { private set; get; }
-        public List<Portion> Portions { private set; get; }
+       
         public List <Criteria> Criterias { private set; get; }
 
         
@@ -28,7 +24,7 @@ namespace RealtAgency.Models
             Flats = new List<Flat>();
             Buyers = new List<Buyer>();
             Criterias = new List<Criteria>();
-            Portions = new List<Portion>();
+           
         }
         // If any data changed.
         public bool IsDirty;
@@ -85,13 +81,7 @@ namespace RealtAgency.Models
                 else f = b;
                 Criterias.Add(new Criteria((i * 1000).ToString(), f.ToString(), 9.ToString(), "Shevchenko")) ;
             }
-            //Portions 
-
-            Portions = new List<Portion>();
-            for (i = 0; i <= n; i++)
-            {
-                Portions.Add(new Portion { Buyer = Buyers[(i)], Criteria = Criterias[(i)] });
-            }
+            
 
         }
 

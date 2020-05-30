@@ -32,6 +32,7 @@
             this.CloseButton = new System.Windows.Forms.Label();
             this.ManePanel = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.flatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.Close_Button = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,18 +45,18 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.conditionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Image = new System.Windows.Forms.DataGridViewImageColumn();
             this.neighbourhoodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flatBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ManePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.criteriaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suitableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.buyerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // CloseButton
@@ -96,13 +97,18 @@
             this.priceDataGridViewTextBoxColumn,
             this.roomsDataGridViewTextBoxColumn,
             this.conditionDataGridViewTextBoxColumn,
+            this.Image,
             this.neighbourhoodDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.flatBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 85);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 64);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(763, 325);
             this.dataGridView1.TabIndex = 12;
+            // 
+            // flatBindingSource
+            // 
+            this.flatBindingSource.DataSource = typeof(RealtAgency.Models.Flat);
             // 
             // panel2
             // 
@@ -160,51 +166,52 @@
             // 
             this.criteriaBindingSource.DataSource = typeof(RealtAgency.RealAgencyLibrary.Models.Criteria);
             // 
-            // suitableBindingSource
-            // 
-           
-            // 
-            // portionBindingSource
-            // 
-            this.portionBindingSource.DataSource = typeof(RealtAgency.RealAgencyLibrary.Models.Portion);
-            // 
             // buyerBindingSource
             // 
             this.buyerBindingSource.DataSource = typeof(RealtAgency.Models.Buyer);
             // 
             // priceDataGridViewTextBoxColumn
             // 
+            this.priceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
             this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
             // roomsDataGridViewTextBoxColumn
             // 
+            this.roomsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.roomsDataGridViewTextBoxColumn.DataPropertyName = "Rooms";
             this.roomsDataGridViewTextBoxColumn.HeaderText = "Rooms";
             this.roomsDataGridViewTextBoxColumn.Name = "roomsDataGridViewTextBoxColumn";
             // 
             // conditionDataGridViewTextBoxColumn
             // 
+            this.conditionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.conditionDataGridViewTextBoxColumn.DataPropertyName = "Condition";
             this.conditionDataGridViewTextBoxColumn.HeaderText = "Condition";
             this.conditionDataGridViewTextBoxColumn.Name = "conditionDataGridViewTextBoxColumn";
             // 
+            // Image
+            // 
+            this.Image.DataPropertyName = "Image";
+            this.Image.HeaderText = "Image";
+            this.Image.Image = global::RealtAgency.Properties.Resources.flat;
+            this.Image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Image.Name = "Image";
+            // 
             // neighbourhoodDataGridViewTextBoxColumn
             // 
+            this.neighbourhoodDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.neighbourhoodDataGridViewTextBoxColumn.DataPropertyName = "Neighbourhood";
             this.neighbourhoodDataGridViewTextBoxColumn.HeaderText = "Neighbourhood";
             this.neighbourhoodDataGridViewTextBoxColumn.Name = "neighbourhoodDataGridViewTextBoxColumn";
             // 
             // nameDataGridViewTextBoxColumn
             // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // flatBindingSource
-            // 
-            this.flatBindingSource.DataSource = typeof(RealtAgency.Models.Flat);
             // 
             // YourOptions
             // 
@@ -218,6 +225,7 @@
             this.Text = "YourOptions";
             this.ManePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.criteriaBindingSource)).EndInit();
@@ -225,7 +233,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.buyerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.flatBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,12 +250,13 @@
         private System.Windows.Forms.BindingSource suitableBindingSource;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.BindingSource portionBindingSource;
+        private System.Windows.Forms.BindingSource buyerBindingSource;
+        private System.Windows.Forms.BindingSource flatBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn conditionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn Image;
         private System.Windows.Forms.DataGridViewTextBoxColumn neighbourhoodDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource buyerBindingSource;
-        private System.Windows.Forms.BindingSource flatBindingSource;
     }
 }

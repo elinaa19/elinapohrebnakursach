@@ -1,18 +1,16 @@
-﻿
-
-using RealtAgency.Models;
+﻿using RealtAgency.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
-//using RealAgencyLibray2.Models;
 
 namespace RealtAgency.Data
 {
     public class Dao
     {
+        // Клас для здійсненя збереження файлу та серілазації
         Contora store;
         const string filePath = "store.bin";
 
@@ -39,9 +37,6 @@ namespace RealtAgency.Data
 
                     Copy(st.Flats, store.Flats);
                     Copy(st.Buyers, store.Buyers);
-                   // Copy(st.Potencials, store.Potencials);
-                    //Copy(st.Solds, store.Solds);
-                    //Copy(st.Suitables, store.Suitables);
                 }
             
 

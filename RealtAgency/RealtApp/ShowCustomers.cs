@@ -1,4 +1,5 @@
 ﻿using RealtAgency.Models;
+using RealtAgency.RealAgencyLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,27 +19,18 @@ namespace RealtAgency
         {
             store = new Contora();
             InitializeComponent();
-             store.FillTestData(10);
+           // store.FillTestData(20);
             store.Load();
+           // store.Save();
             buyerBindingSource.DataSource = store.Buyers;
             buyerBindingSource.ResetBindings(false);
+           
 
         }
 
-        private void Close_Button_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
 
-        private void Close_Button_MouseEnter(object sender, EventArgs e)
-        {
-            Close_Button.ForeColor = Color.Red;
-        }
-
-        private void Close_Button_MouseLeave(object sender, EventArgs e)
-        {
-            Close_Button.ForeColor = Color.White;
-        }
+       
 
         Point LastPount;
         private void ManePanel_MouseMove(object sender, MouseEventArgs e)
@@ -58,14 +50,50 @@ namespace RealtAgency
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Form Main = new Menu( );
-            Main.Top = this.Top;
-            Main.Left = this.Left;
-            Main.Show();
+          
+            
             this.Hide();
 
         }
 
-       
+        private void ShowCustomers_Load(object sender, EventArgs e)
+        {
+            customersGridView.Rows[0].Selected = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var toDel = customersGridView.SelectedRows[0].DataBoundItem as Buyer;
+            var res = MessageBox.Show($"Delete {toDel.Name} ?", "", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                store.Buyers.Remove(toDel);
+                buyerBindingSource.ResetBindings(false);
+                store.IsDirty = true;
+            }
+
+            buyerBindingSource.ResetBindings(false);
+
+        }
+
+        private void ShowCustomers_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!store.IsDirty)
+                return;
+            var res = MessageBox.Show("Save data before exit?", "", MessageBoxButtons.YesNoCancel);
+            switch (res)
+            {
+                case DialogResult.Cancel:
+                    e.Cancel = true;
+                    break;
+                case DialogResult.Yes:
+                    store.Save();
+                    break;
+                case DialogResult.No:
+                    break;
+            }
+        }
     }
-}
+    }
+
+

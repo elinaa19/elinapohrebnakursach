@@ -47,7 +47,6 @@
     <Compile Include="Models\Contora.cs" />
     <Compile Include="Models\Criteria.cs" />
     <Compile Include="Models\Flat.cs" />
-    <Compile Include="Models\Portion.cs" />
     <Compile Include="Models\Realtor.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="UserControl1.cs">

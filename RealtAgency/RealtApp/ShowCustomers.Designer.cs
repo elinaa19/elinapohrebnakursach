@@ -32,18 +32,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ManePanel = new System.Windows.Forms.Panel();
             this.customersGridView = new System.Windows.Forms.DataGridView();
-            this.buyerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CancelButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Close_Button = new System.Windows.Forms.Label();
-            this.CloseButton = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.portionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buyerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.criteriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ManePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buyerBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buyerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.criteriaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,23 +57,24 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(801, 58);
+            this.label1.Size = new System.Drawing.Size(369, 58);
             this.label1.TabIndex = 0;
             this.label1.Text = "Customers";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ManePanel
             // 
+            this.ManePanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ManePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(218)))), ((int)(((byte)(219)))));
             this.ManePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ManePanel.Controls.Add(this.button2);
             this.ManePanel.Controls.Add(this.customersGridView);
             this.ManePanel.Controls.Add(this.CancelButton);
             this.ManePanel.Controls.Add(this.panel2);
             this.ManePanel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ManePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ManePanel.Location = new System.Drawing.Point(0, 0);
             this.ManePanel.Name = "ManePanel";
-            this.ManePanel.Size = new System.Drawing.Size(803, 478);
+            this.ManePanel.Size = new System.Drawing.Size(371, 478);
             this.ManePanel.TabIndex = 8;
             this.ManePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseDown);
             this.ManePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ManePanel_MouseMove);
@@ -83,14 +87,10 @@
             this.nameDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn});
             this.customersGridView.DataSource = this.buyerBindingSource;
-            this.customersGridView.Location = new System.Drawing.Point(22, 82);
+            this.customersGridView.Location = new System.Drawing.Point(46, 92);
             this.customersGridView.Name = "customersGridView";
-            this.customersGridView.Size = new System.Drawing.Size(759, 334);
+            this.customersGridView.Size = new System.Drawing.Size(285, 334);
             this.customersGridView.TabIndex = 12;
-            // 
-            // buyerBindingSource
-            // 
-            this.buyerBindingSource.DataSource = typeof(RealtAgency.Models.Buyer);
             // 
             // CancelButton
             // 
@@ -102,9 +102,9 @@
             this.CancelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CancelButton.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelButton.Location = new System.Drawing.Point(589, 432);
+            this.CancelButton.Location = new System.Drawing.Point(63, 432);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(201, 33);
+            this.CancelButton.Size = new System.Drawing.Size(89, 33);
             this.CancelButton.TabIndex = 11;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = false;
@@ -113,46 +113,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gray;
-            this.panel2.Controls.Add(this.Close_Button);
-            this.panel2.Controls.Add(this.CloseButton);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(801, 58);
+            this.panel2.Size = new System.Drawing.Size(369, 58);
             this.panel2.TabIndex = 0;
-            // 
-            // Close_Button
-            // 
-            this.Close_Button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.Close_Button.BackColor = System.Drawing.Color.Transparent;
-            this.Close_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Close_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Close_Button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Close_Button.Location = new System.Drawing.Point(765, -4);
-            this.Close_Button.Name = "Close_Button";
-            this.Close_Button.Size = new System.Drawing.Size(37, 32);
-            this.Close_Button.TabIndex = 12;
-            this.Close_Button.Text = "x";
-            this.Close_Button.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Close_Button.Click += new System.EventHandler(this.Close_Button_Click);
-            this.Close_Button.MouseEnter += new System.EventHandler(this.Close_Button_MouseEnter);
-            this.Close_Button.MouseLeave += new System.EventHandler(this.Close_Button_MouseLeave);
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.CloseButton.BackColor = System.Drawing.Color.Transparent;
-            this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CloseButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.CloseButton.Location = new System.Drawing.Point(806, -1);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(3, 32);
-            this.CloseButton.TabIndex = 2;
-            this.CloseButton.Text = "x";
-            this.CloseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
             // 
@@ -162,6 +129,24 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(208, 432);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(89, 33);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Delete ";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -176,20 +161,32 @@
             this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
             this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
             // 
+            // buyerBindingSource
+            // 
+            this.buyerBindingSource.DataSource = typeof(RealtAgency.Models.Buyer);
+            // 
+            // criteriaBindingSource
+            // 
+            this.criteriaBindingSource.DataSource = typeof(RealtAgency.RealAgencyLibrary.Models.Criteria);
+            // 
             // ShowCustomers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(803, 478);
+            this.ClientSize = new System.Drawing.Size(369, 478);
             this.Controls.Add(this.ManePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ShowCustomers";
             this.Text = "ShowCustomers";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ShowCustomers_FormClosing);
+            this.Load += new System.EventHandler(this.ShowCustomers_Load);
             this.ManePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customersGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buyerBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.portionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buyerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.criteriaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,13 +196,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel ManePanel;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label CloseButton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label Close_Button;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.DataGridView customersGridView;
         private System.Windows.Forms.BindingSource buyerBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource criteriaBindingSource;
+        private System.Windows.Forms.BindingSource portionBindingSource;
+        private System.Windows.Forms.Button button2;
     }
 }

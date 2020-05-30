@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RealtAgency.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace RealtAgency.RealAgencyLibrary.Models
         public string Rooms { set; get; }
         public string Condition { set; get; }
         public string Neighbourhood { set; get; }
+        public List<Buyer> Buyers;
 
         public Criteria (string price, string rooms, string condition, string neighbourhood)
         {
@@ -20,6 +22,7 @@ namespace RealtAgency.RealAgencyLibrary.Models
             Rooms = rooms;
             Condition = condition;
             Neighbourhood = neighbourhood;
+            Buyers = new List<Buyer>();
         }
 
         public Criteria()

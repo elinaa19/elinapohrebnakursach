@@ -168,5 +168,12 @@ namespace RealtAgency
                 e.Handled = true;
             }
         }
+
+        // Поівідомлення користувачу
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Fill all the fields and then click complite to add/change flat");
+
+        }
     }
 } 

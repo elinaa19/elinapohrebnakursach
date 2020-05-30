@@ -256,12 +256,30 @@ namespace RealtAgency
             store.IsDirty = true;
             store.Load();
         }
-
         private void showAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             flatBindingSource.DataSource = store.Flats;
             store.Load();
             flatBindingSource.ResetBindings(false);
+        }
+
+        // Повідомлення користувачу
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You are on the main form now, click help if you have any problems");
+        }
+
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+           "To get help click help",
+           "Help",
+           MessageBoxButtons.OK,
+           MessageBoxIcon.Question,
+           MessageBoxDefaultButton.Button1,
+           0,
+           "",
+           "keyword");
         }
     }
 }

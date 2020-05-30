@@ -129,6 +129,11 @@ namespace RealtAgency
         {
             System.Windows.Forms.Clipboard.Clear();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Please, fill all the fields to get rieltor's rights");
+        }
     }
 }
 

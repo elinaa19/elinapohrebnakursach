@@ -10,18 +10,19 @@ namespace RealtAgency.Models
 {
     //Покупець - це ім'я + пароль.
     [Serializable]
-    public class Buyer: User
+    public class Buyer : User
     {
 
-       
-        public List<Criteria> YourFlats;
+
+        public List<Criteria> Criterias;
 
 
         public Buyer(string name, string password)
         {
             Name = name;
             Password = password;
-            YourFlats = new List<Criteria> ();
+            Criterias = new List<Criteria>();
+
         }
     }
 }
