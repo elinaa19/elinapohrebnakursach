@@ -1,5 +1,4 @@
-﻿
-using RealtAgency.Data;
+﻿using RealtAgency.Data;
 using RealtAgency.RealAgencyLibrary.Models;
 using System;
 using System.Collections.Generic;

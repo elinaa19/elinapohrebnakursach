@@ -272,14 +272,15 @@ namespace RealtAgency
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-           "To get help click help",
-           "Help",
-           MessageBoxButtons.OK,
-           MessageBoxIcon.Question,
-           MessageBoxDefaultButton.Button1,
-           0,
-           "",
-           "keyword");
+            "To get access to the instriction click Cправка",
+            "Cправка",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Question,
+            MessageBoxDefaultButton.Button1,
+            0,
+            "https://github.com/elinaa19/elinapohrebnakursach/tree/master/Docs",
+            "keyword");
         }
+       
     }
 }

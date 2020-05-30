@@ -175,6 +175,7 @@ namespace RealtAgency
             AutPassword.Text = AutPassword.Text.Replace(" ", " ");
         }
 
+       // Повідомлення  користувачу
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Please, fill all the fields, if you already have register," +

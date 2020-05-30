@@ -18,20 +18,15 @@ namespace RealtAgency
         public ShowCustomers()
         {
             store = new Contora();
-            InitializeComponent();
-           // store.FillTestData(20);
+            InitializeComponent();       
             store.Load();
-           // store.Save();
             buyerBindingSource.DataSource = store.Buyers;
             buyerBindingSource.ResetBindings(false);
            
 
         }
 
-       
-
-       
-
+        //Події та їх Функції для переміщення форми по екрану 
         Point LastPount;
         private void ManePanel_MouseMove(object sender, MouseEventArgs e)
         {
@@ -48,6 +43,7 @@ namespace RealtAgency
             LastPount = new Point(e.X, e.Y);
         }
 
+        //Закриття кнопка
         private void CancelButton_Click(object sender, EventArgs e)
         {
           
@@ -61,6 +57,7 @@ namespace RealtAgency
             customersGridView.Rows[0].Selected = true;
         }
 
+        //Втдалення користувача
         private void button2_Click(object sender, EventArgs e)
         {
             var toDel = customersGridView.SelectedRows[0].DataBoundItem as Buyer;
